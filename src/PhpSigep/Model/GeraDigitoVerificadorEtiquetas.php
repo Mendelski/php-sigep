@@ -13,13 +13,11 @@ class GeraDigitoVerificadorEtiquetas extends AbstractModel
      * @var AccessData
      */
     protected $accessData;
-    /**
-     * @var Etiqueta[]
-     */
+    /** @var Etiqueta[] */
     protected $etiquetas;
 
     /**
-     * @param \PhpSigep\Model\AccessData $accessData
+     * @param AccessData $accessData
      *      Opcional.
      *      Quando null será usado o valor retornado pelo método {@link \PhpSigep\Bootstrap::getConfig() }
      */
@@ -29,35 +27,23 @@ class GeraDigitoVerificadorEtiquetas extends AbstractModel
     }
 
     /**
-     * @return \PhpSigep\Model\AccessData
+     * @return Etiqueta[]
      */
-    public function getAccessData()
+    public function getEtiquetas(): array
     {
-        return $this->accessData;
-    }
-
-    /**
-     * @param Etiqueta $etiqueta
-     */
-    public function addEtiqueta($etiqueta)
-    {
-        $this->etiquetas[] = $etiqueta;
+        return $this->etiquetas;
     }
 
     /**
      * @param Etiqueta[] $etiquetas
+     * @return GeraDigitoVerificadorEtiquetas
      */
-    public function setEtiquetas(array $etiquetas)
+    public function setEtiquetas(array $etiquetas): GeraDigitoVerificadorEtiquetas
     {
         $this->etiquetas = $etiquetas;
+        return $this;
     }
 
-    /**
-     * @return Etiqueta[]
-     */
-    public function getEtiquetas()
-    {
-        return (array)$this->etiquetas;
-    }
+
 
 }

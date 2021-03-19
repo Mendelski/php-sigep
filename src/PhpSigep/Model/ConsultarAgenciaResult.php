@@ -7,37 +7,28 @@ namespace PhpSigep\Model;
  */
 class ConsultarAgenciaResult extends AbstractModel
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $codigoRetorno;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $descricaoRetorno;
 
-    /**
-     * @var strng
-     */
+    /** @var string */
     protected $versao;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $dataHoraRetorno;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $agencia;
 
     /**
-     * @var array armazena o resultado bruto, caso seja necessário para outro fins
+     * armazena o resultado bruto, caso seja necessário para outro fins
+     * @var array
      */
     protected $resultArray;
     
-    public function __construct(array $initialValues = array())
+    public function __construct(array $initialValues = [])
     {
         $this->resultArray = $initialValues;
 
@@ -46,50 +37,112 @@ class ConsultarAgenciaResult extends AbstractModel
     }
 
     /**
-     * @return array
+     * @return string
      */
-    public function getCodigoRetorno()
+    public function getCodigoRetorno(): string
     {
         return $this->codigoRetorno;
     }
 
     /**
-     * @return array
+     * @param string $codigoRetorno
+     * @return ConsultarAgenciaResult
      */
-    public function getDescricaoRetorno()
+    public function setCodigoRetorno(string $codigoRetorno): ConsultarAgenciaResult
+    {
+        $this->codigoRetorno = $codigoRetorno;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescricaoRetorno(): string
     {
         return $this->descricaoRetorno;
     }
 
     /**
-     * @return array
+     * @param string $descricaoRetorno
+     * @return ConsultarAgenciaResult
      */
-    public function getVersao()
+    public function setDescricaoRetorno(string $descricaoRetorno): ConsultarAgenciaResult
+    {
+        $this->descricaoRetorno = $descricaoRetorno;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVersao(): string
     {
         return $this->versao;
     }
 
     /**
-     * @return array
+     * @param string $versao
+     * @return ConsultarAgenciaResult
      */
-    public function getDataHoraRetorno()
+    public function setVersao(string $versao): ConsultarAgenciaResult
+    {
+        $this->versao = $versao;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDataHoraRetorno(): string
     {
         return $this->dataHoraRetorno;
     }
 
     /**
-     * @return array
+     * @param string $dataHoraRetorno
+     * @return ConsultarAgenciaResult
      */
-    public function getAgencia()
+    public function setDataHoraRetorno(string $dataHoraRetorno): ConsultarAgenciaResult
     {
-        return $this->agencia;
+        $this->dataHoraRetorno = $dataHoraRetorno;
+        return $this;
     }
 
     /**
      * @return array
      */
-    public function getResultArray()
+    public function getAgencia(): array
+    {
+        return $this->agencia;
+    }
+
+    /**
+     * @param array $agencia
+     * @return ConsultarAgenciaResult
+     */
+    public function setAgencia(array $agencia): ConsultarAgenciaResult
+    {
+        $this->agencia = $agencia;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getResultArray(): array
     {
         return $this->resultArray;
     }
+
+    /**
+     * @param array $resultArray
+     * @return ConsultarAgenciaResult
+     */
+    public function setResultArray(array $resultArray): ConsultarAgenciaResult
+    {
+        $this->resultArray = $resultArray;
+        return $this;
+    }
+
+
 }

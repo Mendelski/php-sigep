@@ -112,265 +112,315 @@ class Remetente extends AbstractModel
     protected $identificacao;
 
     /**
-     * 
      * Max length: 1
      * @var string
      */
     protected $sms;
+
+    /** @var string */
     protected $referencia;
 
     /**
      * @return string
      */
-    public function getBairro()
-    {
-        return $this->bairro;
-    }
-
-    /**
-     * @param string $bairro
-     */
-    public function setBairro($bairro)
-    {
-        $this->bairro = $bairro;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCep()
-    {
-        return $this->cep;
-    }
-
-    /**
-     * @param string $cep
-     */
-    public function setCep($cep)
-    {
-        $this->cep = $cep;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCidade()
-    {
-        return $this->cidade;
-    }
-
-    /**
-     * @param string $cidade
-     */
-    public function setCidade($cidade)
-    {
-        $this->cidade = $cidade;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCodigoAdministrativo()
-    {
-        return $this->codigoAdministrativo;
-    }
-
-    /**
-     * @param string $codigoAdministrativo
-     */
-    public function setCodigoAdministrativo($codigoAdministrativo)
-    {
-        $this->codigoAdministrativo = $codigoAdministrativo;
-    }
-
-    /**
-     * @return string
-     */
-    public function getComplemento()
-    {
-        return $this->complemento;
-    }
-
-    /**
-     * @param string $complemento
-     */
-    public function setComplemento($complemento)
-    {
-        $this->complemento = $complemento;
-    }
-
-    /**
-     * @return \PhpSigep\Model\Diretoria
-     */
-    public function getDiretoria()
-    {
-        return $this->diretoria;
-    }
-
-    /**
-     * @param \PhpSigep\Model\Diretoria $diretoria
-     */
-    public function setDiretoria($diretoria)
-    {
-        $this->diretoria = $diretoria;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFax()
-    {
-        return $this->fax;
-    }
-
-    /**
-     * @param string $fax
-     */
-    public function setFax($fax)
-    {
-        $this->fax = $fax;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLogradouro()
-    {
-        return $this->logradouro;
-    }
-
-    /**
-     * @param string $logradouro
-     */
-    public function setLogradouro($logradouro)
-    {
-        $this->logradouro = $logradouro;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    /**
-     * @param string $nome
-     */
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    /**
-     * @param string $numero
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNumeroContrato()
+    public function getNumeroContrato(): string
     {
         return $this->numeroContrato;
     }
 
     /**
      * @param string $numeroContrato
+     * @return Remetente
      */
-    public function setNumeroContrato($numeroContrato)
+    public function setNumeroContrato(string $numeroContrato): self
     {
         $this->numeroContrato = $numeroContrato;
+        return $this;
+    }
+
+    /**
+     * @return Diretoria
+     */
+    public function getDiretoria(): Diretoria
+    {
+        return $this->diretoria;
+    }
+
+    /**
+     * @param Diretoria $diretoria
+     * @return Remetente
+     */
+    public function setDiretoria(Diretoria $diretoria): self
+    {
+        $this->diretoria = $diretoria;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getTelefone()
+    public function getCodigoAdministrativo(): string
     {
-        return $this->telefone;
+        return $this->codigoAdministrativo;
     }
 
     /**
-     * @param string $telefone
+     * @param string $codigoAdministrativo
+     * @return Remetente
      */
-    public function setTelefone($telefone)
+    public function setCodigoAdministrativo(string $codigoAdministrativo): self
     {
-        $this->telefone = $telefone;
+        $this->codigoAdministrativo = $codigoAdministrativo;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getUf()
+    public function getNome(): string
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @param string $nome
+     * @return Remetente
+     */
+    public function setNome(string $nome): self
+    {
+        $this->nome = $nome;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogradouro(): string
+    {
+        return $this->logradouro;
+    }
+
+    /**
+     * @param string $logradouro
+     * @return Remetente
+     */
+    public function setLogradouro(string $logradouro): self
+    {
+        $this->logradouro = $logradouro;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNumero(): string
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param string $numero
+     * @return Remetente
+     */
+    public function setNumero(string $numero): self
+    {
+        $this->numero = $numero;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getComplemento(): string
+    {
+        return $this->complemento;
+    }
+
+    /**
+     * @param string $complemento
+     * @return Remetente
+     */
+    public function setComplemento(string $complemento): self
+    {
+        $this->complemento = $complemento;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBairro(): string
+    {
+        return $this->bairro;
+    }
+
+    /**
+     * @param string $bairro
+     * @return Remetente
+     */
+    public function setBairro(string $bairro): self
+    {
+        $this->bairro = $bairro;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCep(): string
+    {
+        return $this->cep;
+    }
+
+    /**
+     * @param string $cep
+     * @return Remetente
+     */
+    public function setCep(string $cep): self
+    {
+        $this->cep = $cep;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCidade(): string
+    {
+        return $this->cidade;
+    }
+
+    /**
+     * @param string $cidade
+     * @return Remetente
+     */
+    public function setCidade(string $cidade): self
+    {
+        $this->cidade = $cidade;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUf(): string
     {
         return $this->uf;
     }
 
     /**
      * @param string $uf
+     * @return Remetente
      */
-    public function setUf($uf)
+    public function setUf(string $uf): self
     {
         $this->uf = $uf;
+        return $this;
     }
 
-    public function getIdentificacao()
+    /**
+     * @return string
+     */
+    public function getTelefone(): string
+    {
+        return $this->telefone;
+    }
+
+    /**
+     * @param string $telefone
+     * @return Remetente
+     */
+    public function setTelefone(string $telefone): self
+    {
+        $this->telefone = $telefone;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFax(): string
+    {
+        return $this->fax;
+    }
+
+    /**
+     * @param string $fax
+     * @return Remetente
+     */
+    public function setFax(string $fax): self
+    {
+        $this->fax = $fax;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return Remetente
+     */
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdentificacao(): string
     {
         return $this->identificacao;
     }
 
-    public function getSms()
-    {
-        return $this->sms;
-    }
-
-    public function setIdentificacao($identificacao)
+    /**
+     * @param string $identificacao
+     * @return Remetente
+     */
+    public function setIdentificacao(string $identificacao): self
     {
         $this->identificacao = $identificacao;
         return $this;
     }
 
-    public function setSms($sms)
+    /**
+     * @return string
+     */
+    public function getSms(): string
+    {
+        return $this->sms;
+    }
+
+    /**
+     * @param string $sms
+     * @return Remetente
+     */
+    public function setSms(string $sms): self
     {
         $this->sms = $sms;
         return $this;
     }
 
-    public function getReferencia()
+    /**
+     * @return string
+     */
+    public function getReferencia(): string
     {
         return $this->referencia;
     }
 
-    public function setReferencia($referencia)
+    /**
+     * @param string $referencia
+     * @return Remetente
+     */
+    public function setReferencia(string $referencia): self
     {
         $this->referencia = $referencia;
         return $this;

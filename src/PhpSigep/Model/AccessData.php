@@ -9,170 +9,201 @@ use PhpSigep\InvalidArgument;
 class AccessData extends AbstractModel
 {
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $codAdministrativo;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $usuario;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $senha;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $idCorreiosUsuario;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $idCorreiosSenha;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $cartaoPostagem;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $cnpjEmpresa;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $numeroContrato;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     protected $anoContrato;
-    /**
-     * @var Diretoria
-     */
+
+    /** @var Diretoria */
     protected $diretoria;
 
     /**
      * @return string
      */
-    public function getCodAdministrativo()
+    public function getCodAdministrativo(): string
     {
         return $this->codAdministrativo;
     }
 
     /**
      * @param string $codAdministrativo
+     * @return AccessData
      */
-    public function setCodAdministrativo($codAdministrativo)
+    public function setCodAdministrativo(string $codAdministrativo): self
     {
         $this->codAdministrativo = $codAdministrativo;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getSenha()
-    {
-        return $this->senha;
-    }
-
-    /**
-     * @param string $senha
-     */
-    public function setSenha($senha)
-    {
-        $this->senha = $senha;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUsuario()
+    public function getUsuario(): string
     {
         return $this->usuario;
     }
 
     /**
      * @param string $usuario
+     * @return AccessData
      */
-    public function setUsuario($usuario)
+    public function setUsuario(string $usuario): self
     {
         $this->usuario = $usuario;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCartaoPostagem()
+    public function getSenha(): string
     {
-        
+        return $this->senha;
+    }
+
+    /**
+     * @param string $senha
+     * @return AccessData
+     */
+    public function setSenha(string $senha): self
+    {
+        $this->senha = $senha;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdCorreiosUsuario(): string
+    {
+        return $this->idCorreiosUsuario;
+    }
+
+    /**
+     * @param string $idCorreiosUsuario
+     * @return AccessData
+     */
+    public function setIdCorreiosUsuario(string $idCorreiosUsuario): self
+    {
+        $this->idCorreiosUsuario = $idCorreiosUsuario;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdCorreiosSenha(): string
+    {
+        return $this->idCorreiosSenha;
+    }
+
+    /**
+     * @param string $idCorreiosSenha
+     * @return AccessData
+     */
+    public function setIdCorreiosSenha(string $idCorreiosSenha): self
+    {
+        $this->idCorreiosSenha = $idCorreiosSenha;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCartaoPostagem(): string
+    {
         return $this->cartaoPostagem;
     }
 
     /**
      * @param string $cartaoPostagem
+     * @return AccessData
      */
-    public function setCartaoPostagem($cartaoPostagem)
+    public function setCartaoPostagem(string $cartaoPostagem): self
     {
         $this->cartaoPostagem = $cartaoPostagem;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCnpjEmpresa()
+    public function getCnpjEmpresa(): string
     {
         return $this->cnpjEmpresa;
     }
 
     /**
      * @param string $cnpjEmpresa
+     * @return AccessData
      */
-    public function setCnpjEmpresa($cnpjEmpresa)
+    public function setCnpjEmpresa(string $cnpjEmpresa): self
     {
         $this->cnpjEmpresa = $cnpjEmpresa;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getNumeroContrato()
+    public function getNumeroContrato(): string
     {
         return $this->numeroContrato;
     }
 
     /**
      * @param string $numeroContrato
+     * @return AccessData
      */
-    public function setNumeroContrato($numeroContrato)
+    public function setNumeroContrato(string $numeroContrato): self
     {
         $this->numeroContrato = $numeroContrato;
+        return $this;
     }
 
     /**
      * @return int
      */
-    public function getAnoContrato()
+    public function getAnoContrato(): int
     {
         return $this->anoContrato;
     }
 
     /**
      * @param int $anoContrato
+     * @return AccessData
      */
-    public function setAnoContrato($anoContrato)
+    public function setAnoContrato(int $anoContrato): self
     {
         $this->anoContrato = $anoContrato;
+        return $this;
     }
 
     /**
-     * @return \PhpSigep\Model\Diretoria
-     */
-    public function getDiretoria()
-    {
-        return $this->diretoria;
-    }
-
-    /**
-     * @param \PhpSigep\Model\Diretoria|int $diretoria
+     * @param $diretoria
+     * @throws Exception
      * @throws InvalidArgument
      */
     public function setDiretoria($diretoria)
@@ -186,35 +217,4 @@ class AccessData extends AbstractModel
         $this->diretoria = $diretoria;
     }
 
-    /**
-     * @return string
-     */
-    public function getIdCorreiosUsuario()
-    {
-        return $this->idCorreiosUsuario;
-    }
-
-    /**
-     * @param string $idCorreiosUsuario
-     */
-    public function setIdCorreiosUsuario($idCorreiosUsuario)
-    {
-        $this->idCorreiosUsuario = $idCorreiosUsuario;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIdCorreiosSenha()
-    {
-        return $this->idCorreiosSenha;
-    }
-
-    /**
-     * @param string $idCorreiosSenha
-     */
-    public function setIdCorreiosSenha($idCorreiosSenha)
-    {
-        $this->idCorreiosSenha = $idCorreiosSenha;
-    }
 }

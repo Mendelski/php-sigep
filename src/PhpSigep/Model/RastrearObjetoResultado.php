@@ -6,67 +6,52 @@ namespace PhpSigep\Model;
  */
 class RastrearObjetoResultado extends AbstractModel
 {
-    /**
-     * @var Etiqueta
-     */
+    /**  @var Etiqueta */
     protected $etiqueta;
 
-    /**
-     * @var RastrearObjetoEvento[]
-     */
+    /** @var RastrearObjetoEvento[] */
     protected $eventos;
 
     /**
-     * @param \PhpSigep\Model\Etiqueta $etiqueta
-     * @return $this;
+     * @return Etiqueta
      */
-    public function setEtiqueta(\PhpSigep\Model\Etiqueta $etiqueta)
-    {
-        $this->etiqueta = $etiqueta;
-
-        return $this;
-    }
-
-    /**
-     * @return \PhpSigep\Model\Etiqueta
-     */
-    public function getEtiqueta()
+    public function getEtiqueta(): Etiqueta
     {
         return $this->etiqueta;
     }
 
     /**
-     * @param \PhpSigep\Model\RastrearObjetoEvento[] $eventos
-     * @return $this;
+     * @param Etiqueta $etiqueta
+     * @return RastrearObjetoResultado
      */
-    public function setEventos(array $eventos)
+    public function setEtiqueta(Etiqueta $etiqueta): RastrearObjetoResultado
     {
-        $this->eventos = $eventos;
-
-        return $this;
-    }
-    
-    /**
-     * @param \PhpSigep\Model\RastrearObjetoEvento[] $eventos
-     * @return $this;
-     */
-    public function addEvento(RastrearObjetoEvento $evento)
-    {
-        if (!is_array($this->eventos)) {
-            $this->eventos = array();
-        }
-        
-        $this->eventos[] = $evento;
-
+        $this->etiqueta = $etiqueta;
         return $this;
     }
 
     /**
-     * @return \PhpSigep\Model\RastrearObjetoEvento[]
+     * @return RastrearObjetoEvento[]
      */
-    public function getEventos()
+    public function getEventos(): array
     {
         return $this->eventos;
     }
+
+    /**
+     * @param RastrearObjetoEvento[] $eventos
+     * @return RastrearObjetoResultado
+     */
+    public function setEventos(array $eventos): RastrearObjetoResultado
+    {
+        $this->eventos = $eventos;
+        return $this;
+    }
+
+    /**
+     * @param \PhpSigep\Model\Etiqueta $etiqueta
+     * @return $this;
+     */
+
 
 }

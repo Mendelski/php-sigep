@@ -81,128 +81,112 @@ class RastrearObjeto extends AbstractModel
     protected $exibirErros =  self::ESCONDER_RESULTADOS_COM_ERRO;
 
     /**
-     * @param \PhpSigep\Model\AccessData $accessData
+     * @return AccessData
      */
-    public function setAccessData($accessData)
-    {
-        $this->accessData = $accessData;
-    }
-
-    /**
-     * @return \PhpSigep\Model\AccessData
-     */
-    public function getAccessData()
+    public function getAccessData(): AccessData
     {
         return $this->accessData;
     }
 
     /**
-     * @return \PhpSigep\Model\Etiqueta[]
+     * @param AccessData $accessData
+     * @return RastrearObjeto
      */
-    public function getEtiquetas()
+    public function setAccessData(AccessData $accessData): RastrearObjeto
+    {
+        $this->accessData = $accessData;
+        return $this;
+    }
+
+    /**
+     * @return Etiqueta[]
+     */
+    public function getEtiquetas(): array
     {
         return $this->etiquetas;
     }
 
     /**
-     * @param \PhpSigep\Model\Etiqueta[] $etiquetas
-     * @return $this;
+     * @param Etiqueta[] $etiquetas
+     * @return RastrearObjeto
      */
-    public function setEtiquetas(array $etiquetas)
+    public function setEtiquetas(array $etiquetas): RastrearObjeto
     {
         $this->etiquetas = $etiquetas;
-
-        return $this;
-    }
-
-    /**
-     * @param \PhpSigep\Model\Etiqueta $etiqueta
-     * @return $this;
-     */
-    public function addEtiqueta(Etiqueta $etiqueta)
-    {
-        if (!is_array($this->etiquetas)) {
-            $this->etiquetas = array();
-        }
-        $this->etiquetas[] = $etiqueta;
-
-        return $this;
-    }
-
-    /**
-     * @param int $tipo
-     * @return $this;
-     */
-    public function setTipo(int $tipo)
-    {
-        $this->tipo = $tipo;
-
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getTipo()
+    public function getTipo(): int
     {
         return $this->tipo;
     }
 
     /**
-     * @param int $tipoResultado
-     * @return $this;
+     * @param int $tipo
+     * @return RastrearObjeto
      */
-    public function setTipoResultado($tipoResultado)
+    public function setTipo(int $tipo): RastrearObjeto
     {
-        $this->tipoResultado = $tipoResultado;
-
+        $this->tipo = $tipo;
         return $this;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getTipoResultado()
+    public function getTipoResultado(): int
     {
         return $this->tipoResultado;
     }
 
     /**
-     * @param string $idioma
-     * @return $this
+     * @param int $tipoResultado
+     * @return RastrearObjeto
      */
-    public function setIdioma(string $idioma)
+    public function setTipoResultado(int $tipoResultado): RastrearObjeto
     {
-        $this->idioma = $idioma;
-
+        $this->tipoResultado = $tipoResultado;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getIdioma()
+    public function getIdioma(): string
     {
         return $this->idioma;
     }
 
     /**
-     * @param bool $exibirErros
-     * @return $this
+     * @param string $idioma
+     * @return RastrearObjeto
      */
-    public function setExibirErros($exibirErros)
+    public function setIdioma(string $idioma): RastrearObjeto
     {
-        $this->exibirErros = $exibirErros;
-
+        $this->idioma = $idioma;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function getExibirErros()
+    public function isExibirErros(): bool
     {
         return $this->exibirErros;
     }
+
+    /**
+     * @param bool $exibirErros
+     * @return RastrearObjeto
+     */
+    public function setExibirErros(bool $exibirErros): RastrearObjeto
+    {
+        $this->exibirErros = $exibirErros;
+        return $this;
+    }
+
     
 }

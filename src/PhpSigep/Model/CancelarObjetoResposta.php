@@ -14,19 +14,18 @@ class CancelarObjetoResposta extends AbstractModel
 
     /**
      * @param $return
-     * @return $this;
+     * @return $this
      */
-    public function setReturn($return)
+    public function setReturn($return): self
     {
         $this->return = $return;
-
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getReturn()
+    public function getReturn(): string
     {
         return $this->return;
     }

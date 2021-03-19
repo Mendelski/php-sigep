@@ -8,22 +8,19 @@ use PhpSigep\Bootstrap;
 class PreListaDePostagem extends AbstractModel
 {
 
-//	/**
-//	 * Identifica o registro da PLP no SIGEP Master. 
-//	 * @var int
-//	 */
-//	protected $id_plp;
     /**
      * Opcional.
      * Quando não informado será usado o valor retornado pelo método {@link \PhpSigep\Bootstrap::getConfig() }
      * @var AccessData
      */
     protected $accessData;
+    
     /**
      * Dados da pessoa que está remetendo esta encomenda.
      * @var Remetente
      */
     protected $remetente;
+    
     /**
      * Os objetos que estão sendo postados.
      * @var ObjetoPostal[]
@@ -31,9 +28,9 @@ class PreListaDePostagem extends AbstractModel
     protected $encomendas;
 
     /**
-     * @param \PhpSigep\Model\AccessData $accessData
-     *      Opcional.
-     *      Quando null será usado o valor retornado pelo método {@link \PhpSigep\Bootstrap::getConfig() }
+     * @param AccessData $accessData
+     * Opcional.
+     * Quando null será usado o valor retornado pelo método {@link \PhpSigep\Bootstrap::getConfig() }
      */
     public function setAccessData($accessData)
     {
@@ -41,43 +38,40 @@ class PreListaDePostagem extends AbstractModel
     }
 
     /**
-     * @return \PhpSigep\Model\AccessData
+     * @return Remetente
      */
-    public function getAccessData()
+    public function getRemetente(): Remetente
     {
-        return ($this->accessData ? $this->accessData : Bootstrap::getConfig()->getAccessData());
+        return $this->remetente;
     }
 
     /**
-     * @param \PhpSigep\Model\ObjetoPostal[] $encomendas
+     * @param Remetente $remetente
+     * @return PreListaDePostagem
      */
-    public function setEncomendas($encomendas)
+    public function setRemetente(Remetente $remetente): self
     {
-        $this->encomendas = $encomendas;
+        $this->remetente = $remetente;
+        return $this;
     }
 
     /**
-     * @return \PhpSigep\Model\ObjetoPostal[]
+     * @return ObjetoPostal[]
      */
-    public function getEncomendas()
+    public function getEncomendas(): array
     {
         return $this->encomendas;
     }
 
     /**
-     * @param \PhpSigep\Model\Remetente $remetente
+     * @param ObjetoPostal[] $encomendas
+     * @return PreListaDePostagem
      */
-    public function setRemetente($remetente)
+    public function setEncomendas(array $encomendas): self
     {
-        $this->remetente = $remetente;
+        $this->encomendas = $encomendas;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\Remetente
-     */
-    public function getRemetente()
-    {
-        return $this->remetente;
-    }
 
 }

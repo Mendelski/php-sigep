@@ -1,6 +1,8 @@
 <?php
 namespace PhpSigep\Model;
 
+use stdClass;
+
 /**
  * O manual de implementação do Correios não documenta todos os campos que o WebSevice retorna.
  * Todos os demais atributos que não estão declarados nesta classe serão inseridos em tempo de execução.
@@ -11,57 +13,53 @@ namespace PhpSigep\Model;
  */
 class BuscaClienteResult extends AbstractModel
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $cnpj;
-    /**
-     * @var \stdClass
-     */
+    /** @var stdClass */
     protected $contratos;
 
-    public function __construct(array $initialValues = array())
+
+    public function __construct(array $initialValues = [])
     {
         $this->_failIfAtributeNotExiste = false;
         parent::__construct($initialValues);
     }
 
     /**
-     * @param string $cnpj
-     * @return $this;
-     */
-    public function setCnpj($cnpj)
-    {
-        $this->cnpj = $cnpj;
-
-        return $this;
-    }
-
-    /**
      * @return string
      */
-    public function getCnpj()
+    public function getCnpj(): string
     {
         return $this->cnpj;
     }
 
     /**
-     * @param \stdClass $contratos
-     * @return $this;
+     * @param string $cnpj
+     * @return BuscaClienteResult
      */
-    public function setContratos(\stdClass $contratos)
+    public function setCnpj(string $cnpj): self
     {
-        $this->contratos = $contratos;
-
+        $this->cnpj = $cnpj;
         return $this;
     }
 
     /**
-     * @return \stdClass
+     * @return stdClass
      */
-    public function getContratos()
+    public function getContratos(): stdClass
     {
         return $this->contratos;
     }
-    
+
+    /**
+     * @param stdClass $contratos
+     * @return BuscaClienteResult
+     */
+    public function setContratos(stdClass $contratos): self
+    {
+        $this->contratos = $contratos;
+        return $this;
+    }
+
+
 }

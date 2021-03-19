@@ -135,194 +135,254 @@ class Destinatario extends AbstractModel
     /**
      * @return string
      */
-    public function getCelular()
-    {
-        return $this->celular;
-    }
-
-    /**
-     * @param string $celular
-     */
-    public function setCelular($celular)
-    {
-        $this->celular = $celular;
-    }
-
-    /**
-     * @return string
-     */
-    public function getComplemento()
-    {
-        return $this->complemento;
-    }
-
-    /**
-     * @param string $complemento
-     */
-    public function setComplemento($complemento)
-    {
-        $this->complemento = $complemento;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLogradouro()
-    {
-        return $this->logradouro;
-    }
-
-    /**
-     * @param string $logradouro
-     */
-    public function setLogradouro($logradouro)
-    {
-        $this->logradouro = $logradouro;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
 
     /**
      * @param string $nome
+     * @return Destinatario
      */
-    public function setNome($nome)
+    public function setNome(string $nome): Destinatario
     {
         $this->nome = $nome;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    /**
-     * @param string $numero
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-    }
-
-    /**
-     * @return string
-     */
-    public function getTelefone()
+    public function getTelefone(): string
     {
         return $this->telefone;
     }
 
     /**
      * @param string $telefone
+     * @return Destinatario
      */
-    public function setTelefone($telefone)
+    public function setTelefone(string $telefone): Destinatario
     {
         $this->telefone = $telefone;
+        return $this;
     }
 
     /**
-     * @return boolean
+     * @return string
      */
-    public function getIsCliqueRetire()
+    public function getCelular(): string
+    {
+        return $this->celular;
+    }
+
+    /**
+     * @param string $celular
+     * @return Destinatario
+     */
+    public function setCelular(string $celular): Destinatario
+    {
+        $this->celular = $celular;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return Destinatario
+     */
+    public function setEmail(string $email): Destinatario
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogradouro(): string
+    {
+        return $this->logradouro;
+    }
+
+    /**
+     * @param string $logradouro
+     * @return Destinatario
+     */
+    public function setLogradouro(string $logradouro): Destinatario
+    {
+        $this->logradouro = $logradouro;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getComplemento(): string
+    {
+        return $this->complemento;
+    }
+
+    /**
+     * @param string $complemento
+     * @return Destinatario
+     */
+    public function setComplemento(string $complemento): Destinatario
+    {
+        $this->complemento = $complemento;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNumero(): string
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param string $numero
+     * @return Destinatario
+     */
+    public function setNumero(string $numero): Destinatario
+    {
+        $this->numero = $numero;
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCliqueRetire(): bool
     {
         return $this->isCliqueRetire;
     }
 
     /**
-     * @param boolean $isCliqueRetire
+     * @param bool $isCliqueRetire
+     * @return Destinatario
      */
-    public function setIsCliqueRetire($isCliqueRetire = false)
+    public function setIsCliqueRetire(bool $isCliqueRetire): Destinatario
     {
         $this->isCliqueRetire = $isCliqueRetire;
+        return $this;
     }
 
-    public function getBairro()
+    /**
+     * @return string
+     */
+    public function getBairro(): string
     {
         return $this->bairro;
     }
 
-    public function getReferencia()
-    {
-        return $this->referencia;
-    }
-
-    public function getCidade()
-    {
-        return $this->cidade;
-    }
-
-    public function getUf()
-    {
-        return $this->uf;
-    }
-
-    public function getCep()
-    {
-        return $this->cep;
-    }
-
-    public function getDdd()
-    {
-        return $this->ddd;
-    }
-
-    public function setBairro($bairro)
+    /**
+     * @param string $bairro
+     * @return Destinatario
+     */
+    public function setBairro(string $bairro): Destinatario
     {
         $this->bairro = $bairro;
         return $this;
     }
 
-    public function setReferencia($referencia)
+    /**
+     * @return string
+     */
+    public function getReferencia(): string
+    {
+        return $this->referencia;
+    }
+
+    /**
+     * @param string $referencia
+     * @return Destinatario
+     */
+    public function setReferencia(string $referencia): Destinatario
     {
         $this->referencia = $referencia;
         return $this;
     }
 
-    public function setCidade($cidade)
+    /**
+     * @return string
+     */
+    public function getCidade(): string
+    {
+        return $this->cidade;
+    }
+
+    /**
+     * @param string $cidade
+     * @return Destinatario
+     */
+    public function setCidade(string $cidade): Destinatario
     {
         $this->cidade = $cidade;
         return $this;
     }
 
-    public function setUf($uf)
+    /**
+     * @return string
+     */
+    public function getUf(): string
+    {
+        return $this->uf;
+    }
+
+    /**
+     * @param string $uf
+     * @return Destinatario
+     */
+    public function setUf(string $uf): Destinatario
     {
         $this->uf = $uf;
         return $this;
     }
 
-    public function setCep($cep)
+    /**
+     * @return int
+     */
+    public function getCep(): int
+    {
+        return $this->cep;
+    }
+
+    /**
+     * @param int $cep
+     * @return Destinatario
+     */
+    public function setCep(int $cep): Destinatario
     {
         $this->cep = $cep;
         return $this;
     }
 
-    public function setDdd($ddd)
+    /**
+     * @return int
+     */
+    public function getDdd(): int
+    {
+        return $this->ddd;
+    }
+
+    /**
+     * @param int $ddd
+     * @return Destinatario
+     */
+    public function setDdd(int $ddd): Destinatario
     {
         $this->ddd = $ddd;
         return $this;
     }
+
+
 }

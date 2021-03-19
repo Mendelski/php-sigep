@@ -2,6 +2,8 @@
 
 namespace PhpSigep\Model;
 
+use Exception;
+
 /**
  * @author : Stavarengo
  * @modify Jonathan Célio da Silva <jonathan.clio@hotmail.com>
@@ -147,17 +149,13 @@ class ServicoDePostagem extends AbstractModel
             self::SERVICE_PAC_CONTRATO_AGENCIA_TA   => array('PAC Contrato Agencia TA', 161277),
         );
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $codigo;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     protected $idServico;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $nome;
 
     /**
@@ -186,10 +184,11 @@ class ServicoDePostagem extends AbstractModel
 
     /**
      * @return ServicoDePostagem[]
+     * @throws Exception
      */
-    public static function getAll()
+    public static function getAll(): array
     {
-        $r = array();
+        $r = [];
         foreach (self::$services as $serviceCode => $serviceDetails) {
             $r[] = new self($serviceCode);
         }
@@ -203,57 +202,68 @@ class ServicoDePostagem extends AbstractModel
      *
      * @return bool
      */
-    public function is($serviceCode)
+    public function is($serviceCode): bool
     {
-        return $this->getCodigo() == $serviceCode;
+        return $this->getCodigo() === $serviceCode;
     }
 
     /**
      * @return string
      */
-    public function getCodigo()
+    public function getCodigo(): string
     {
         return $this->codigo;
     }
 
     /**
-     * @param int $codigo
+     * @return array[]
      */
-    public function setCodigo($codigo)
+    public static function getServices(): array
     {
-        $this->codigo = $codigo;
+        return self::$services;
+    }
+
+    /**
+     * @param array[] $services
+     */
+    public static function setServices(array $services): void
+    {
+        self::$services = $services;
     }
 
     /**
      * @return int
      */
-    public function getIdServico()
+    public function getIdServico(): int
     {
         return $this->idServico;
     }
 
     /**
      * @param int $idServico
+     * @return ServicoDePostagem
      */
-    public function setIdServico($idServico)
+    public function setIdServico(int $idServico): ServicoDePostagem
     {
         $this->idServico = $idServico;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getNome()
+    public function getNome(): string
     {
         return $this->nome;
     }
 
     /**
      * @param string $nome
+     * @return ServicoDePostagem
      */
-    public function setNome($nome)
+    public function setNome(string $nome): ServicoDePostagem
     {
         $this->nome = $nome;
+        return $this;
     }
-
 }

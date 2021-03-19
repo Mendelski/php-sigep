@@ -29,42 +29,47 @@ class ServicoAdicional extends AbstractModel
      */
     protected $valorDeclarado;
 
-    public function is($codigo)
+    public function is($codigo): bool
     {
-        return $codigo == $this->getCodigoServicoAdicional();
-    }
-
-    /**
-     * @param int $codigoServicoAdicional
-     */
-    public function setCodigoServicoAdicional($codigoServicoAdicional)
-    {
-        $this->codigoServicoAdicional = $codigoServicoAdicional;
+        return $codigo === $this->getCodigoServicoAdicional();
     }
 
     /**
      * @return int
      */
-    public function getCodigoServicoAdicional()
+    public function getCodigoServicoAdicional(): int
     {
         return $this->codigoServicoAdicional;
     }
 
     /**
-     * @param float $valorDeclarado
+     * @param int $codigoServicoAdicional
+     * @return ServicoAdicional
      */
-    public function setValorDeclarado($valorDeclarado)
+    public function setCodigoServicoAdicional(int $codigoServicoAdicional): ServicoAdicional
     {
-        $this->valorDeclarado = $valorDeclarado;
+        $this->codigoServicoAdicional = $codigoServicoAdicional;
+        return $this;
     }
 
     /**
      * @return float
      */
-    public function getValorDeclarado()
+    public function getValorDeclarado(): float
     {
-        return (float)$this->valorDeclarado;
+        return $this->valorDeclarado;
     }
+
+    /**
+     * @param float $valorDeclarado
+     * @return ServicoAdicional
+     */
+    public function setValorDeclarado(float $valorDeclarado): ServicoAdicional
+    {
+        $this->valorDeclarado = $valorDeclarado;
+        return $this;
+    }
+
 
 
 }

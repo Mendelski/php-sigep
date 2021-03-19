@@ -11,47 +11,28 @@ namespace PhpSigep\Model;
 class PedidoInformacaoResponse extends AbstractModel
 {
 
-    /**
-     * @var string Número do Lote (Controle)
-     */
+    /** @var string Número do Lote (Controle) */
     protected $numeroLote;
 
-    /**
-     * @var string Data do Registro da manifestação
-     */
+    /** @var string Data do Registro da manifestação */
     protected $dataHoraCadastro;
 
-    /**
-     * @var string Código da Etiqueta/ Código Rastreamento
-     */
+    /** @var string Código da Etiqueta/ Código Rastreamento */
     protected $codigoObjeto;
 
-    /**
-     * @var string Número de Protocolo da Manifestação
-     */
+    /** @var string Número de Protocolo da Manifestação */
     protected $numeroPi;
 
-    /**
-     * @var string Código de Retorno
-     */
+    /** @var string Código de Retorno */
     protected $codigoRetorno;
 
-    /**
-     * @var string Descrição do Retono
-     */
+    /** @var string Descrição do Retono */
     protected $descricaoRetorno;
 
-    /**
-     * @var array Resultado da consulta
-     */
+    /** @var array Resultado da consulta */
     protected $resultArray;
 
-    /**
-     * PedidoInformacaoResponse constructor.
-     *
-     * @param array $initialValues
-     */
-    public function __construct(array $initialValues = array())
+    public function __construct(array $initialValues = [])
     {
         $this->resultArray = $initialValues;
 
@@ -59,141 +40,129 @@ class PedidoInformacaoResponse extends AbstractModel
     }
 
     /**
-     * Define o número do lote
-     *
-     * @param string $numeroLote
-     * @return $this
-     */
-    public function setNumeroLote($numeroLote)
-    {
-        $this->numeroLote = $numeroLote;
-
-        return $this;
-    }
-
-    /**
-     * Obtem o número do lote
-     *
      * @return string
      */
-    public function getNumeroLote()
+    public function getNumeroLote(): string
     {
         return $this->numeroLote;
     }
 
     /**
-     * Define a data e hora de cadastro da manifestação
-     *
-     * @param string $dataHoraCadastro
-     * @return $this
+     * @param string $numeroLote
+     * @return PedidoInformacaoResponse
      */
-    public function setDataHoraCadastro($dataHoraCadastro)
+    public function setNumeroLote(string $numeroLote): PedidoInformacaoResponse
     {
-        $this->dataHoraCadastro = $dataHoraCadastro;
-
+        $this->numeroLote = $numeroLote;
         return $this;
     }
 
     /**
-     * Obtem a data e hora de cadastro da manifestação
-     *
      * @return string
      */
-    public function getDataHoraCadastro()
+    public function getDataHoraCadastro(): string
     {
         return $this->dataHoraCadastro;
     }
 
     /**
-     * Define o código do objeto
-     *
-     * @param string $codigoObjeto
-     * @return $this;
+     * @param string $dataHoraCadastro
+     * @return PedidoInformacaoResponse
      */
-    public function setCodigoObjeto($codigoObjeto)
+    public function setDataHoraCadastro(string $dataHoraCadastro): PedidoInformacaoResponse
     {
-        $this->codigoObjeto = $codigoObjeto;
-
+        $this->dataHoraCadastro = $dataHoraCadastro;
         return $this;
     }
 
     /**
-     * Obtem o código do objeto
-     *
      * @return string
      */
-    public function getCodigoObjeto()
+    public function getCodigoObjeto(): string
     {
         return $this->codigoObjeto;
     }
 
     /**
-     * Define o número do protocolo
-     *
-     * @param string $numeroPi
-     * @return $this
+     * @param string $codigoObjeto
+     * @return PedidoInformacaoResponse
      */
-    public function setNumeroPi($numeroPi)
+    public function setCodigoObjeto(string $codigoObjeto): PedidoInformacaoResponse
     {
-        $this->numeroPi = $numeroPi;
-
+        $this->codigoObjeto = $codigoObjeto;
         return $this;
     }
 
     /**
-     * Obtem o número do protocolo
-     *
      * @return string
      */
-    public function getNumeroPi()
+    public function getNumeroPi(): string
     {
         return $this->numeroPi;
     }
 
     /**
-     * Define o código de retorno da consulta
-     *
-     * @param string $codigoRetorno
-     * @return $this
+     * @param string $numeroPi
+     * @return PedidoInformacaoResponse
      */
-    public function setCodigoRetorno($codigoRetorno)
+    public function setNumeroPi(string $numeroPi): PedidoInformacaoResponse
     {
-        $this->codigoRetorno = $codigoRetorno;
-
+        $this->numeroPi = $numeroPi;
         return $this;
     }
 
     /**
-     * Obtem o código de retorno da consulta
-     *
      * @return string
      */
-    public function getCodigoRetorno()
+    public function getCodigoRetorno(): string
     {
         return $this->codigoRetorno;
     }
 
     /**
-     * Define a descrição do retorno da consulta
-     *
-     * @param string $descricaoRetorno
-     * @return $this
+     * @param string $codigoRetorno
+     * @return PedidoInformacaoResponse
      */
-    public function setDescricaoRetorno($descricaoRetorno)
+    public function setCodigoRetorno(string $codigoRetorno): PedidoInformacaoResponse
     {
-        $this->descricaoRetorno = $descricaoRetorno;
-
+        $this->codigoRetorno = $codigoRetorno;
         return $this;
     }
 
     /**
-     * Obtem a descrição do retorno da consulta
-     *
      * @return string
      */
-    public function getDescricaoRetorno()
+    public function getDescricaoRetorno(): string
     {
         return $this->descricaoRetorno;
+    }
+
+    /**
+     * @param string $descricaoRetorno
+     * @return PedidoInformacaoResponse
+     */
+    public function setDescricaoRetorno(string $descricaoRetorno): PedidoInformacaoResponse
+    {
+        $this->descricaoRetorno = $descricaoRetorno;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getResultArray(): array
+    {
+        return $this->resultArray;
+    }
+
+    /**
+     * @param array $resultArray
+     * @return PedidoInformacaoResponse
+     */
+    public function setResultArray(array $resultArray): PedidoInformacaoResponse
+    {
+        $this->resultArray = $resultArray;
+        return $this;
     }
 
 }

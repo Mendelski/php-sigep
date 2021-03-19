@@ -1,13 +1,15 @@
 <?php
 namespace PhpSigep\Pdf\Chancela;
 
+use PhpSigep\Pdf\ImprovedFPDF;
+
 /**
  * @author: Stavarengo
  */
 class Pac extends AbstractChancela
 {
 
-    public function draw(\PhpSigep\Pdf\ImprovedFPDF $pdf)
+    public function draw(ImprovedFPDF $pdf)
     {
         $pdf->saveState();
 

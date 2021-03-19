@@ -1,7 +1,6 @@
 <?php
 /**
  * prestashop Project ${PROJECT_URL}
- *
  * @link      ${GITHUB_URL} Source code
  */
  
@@ -9,26 +8,23 @@ namespace PhpSigep\Model;
 
 class FechaPlpVariosServicosRetorno extends AbstractModel
 {
-    /**
-     * @var int
-     */
+    /** @var int */
     protected $idPlp;
 
     /**
      * @param int $idPlp
-     * @return $this;
+     * @return $this
      */
-    public function setIdPlp($idPlp)
+    public function setIdPlp(int $idPlp): self
     {
         $this->idPlp = $idPlp;
-
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getIdPlp()
+    public function getIdPlp(): int
     {
         return (int)$this->idPlp;
     }

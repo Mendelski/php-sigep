@@ -101,192 +101,217 @@ class DestinoNacional extends AbstractModel implements Destino
     /**
      * @return string
      */
-    public function getBairro()
+    public function getBairro(): string
     {
         return $this->bairro;
     }
 
     /**
      * @param string $bairro
+     * @return DestinoNacional
      */
-    public function setBairro($bairro)
+    public function setBairro(string $bairro): DestinoNacional
     {
         $this->bairro = $bairro;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCep()
+    public function getCep(): string
     {
         return $this->cep;
     }
 
     /**
      * @param string $cep
+     * @return DestinoNacional
      */
-    public function setCep($cep)
+    public function setCep(string $cep): DestinoNacional
     {
         $this->cep = $cep;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getCidade()
+    public function getCidade(): string
     {
         return $this->cidade;
     }
 
     /**
      * @param string $cidade
+     * @return DestinoNacional
      */
-    public function setCidade($cidade)
+    public function setCidade(string $cidade): DestinoNacional
     {
         $this->cidade = $cidade;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getDescricaoObjeto()
-    {
-        return $this->descricaoObjeto;
-    }
-
-    /**
-     * @param string $descricaoObjeto
-     */
-    public function setDescricaoObjeto($descricaoObjeto)
-    {
-        $this->descricaoObjeto = $descricaoObjeto;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNumeroPedido()
-    {
-        return $this->numeroPedido;
-    }
-
-    /**
-     * @param int $numeroPedido
-     */
-    public function setNumeroPedido($numeroPedido)
-    {
-        $this->numeroPedido = $numeroPedido;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNumeroNotaFiscal()
-    {
-        return $this->numeroNotaFiscal;
-    }
-
-    /**
-     * @param int $numeroNotaFiscal
-     */
-    public function setNumeroNotaFiscal($numeroNotaFiscal)
-    {
-        $this->numeroNotaFiscal = $numeroNotaFiscal;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSerieNotaFiscal()
-    {
-        return $this->serieNotaFiscal;
-    }
-
-    /**
-     * @param string $serieNotaFiscal
-     */
-    public function setSerieNotaFiscal($serieNotaFiscal)
-    {
-        $this->serieNotaFiscal = $serieNotaFiscal;
-    }
-
-    /**
-     * @return string
-     */
-    public function getUf()
+    public function getUf(): string
     {
         return $this->uf;
     }
 
     /**
      * @param string $uf
+     * @return DestinoNacional
      */
-    public function setUf($uf)
+    public function setUf(string $uf): DestinoNacional
     {
         $this->uf = $uf;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumeroPedido(): int
+    {
+        return $this->numeroPedido;
+    }
+
+    /**
+     * @param int $numeroPedido
+     * @return DestinoNacional
+     */
+    public function setNumeroPedido(int $numeroPedido): DestinoNacional
+    {
+        $this->numeroPedido = $numeroPedido;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumeroNotaFiscal(): int
+    {
+        return $this->numeroNotaFiscal;
+    }
+
+    /**
+     * @param int $numeroNotaFiscal
+     * @return DestinoNacional
+     */
+    public function setNumeroNotaFiscal(int $numeroNotaFiscal): DestinoNacional
+    {
+        $this->numeroNotaFiscal = $numeroNotaFiscal;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSerieNotaFiscal(): string
+    {
+        return $this->serieNotaFiscal;
+    }
+
+    /**
+     * @param string $serieNotaFiscal
+     * @return DestinoNacional
+     */
+    public function setSerieNotaFiscal(string $serieNotaFiscal): DestinoNacional
+    {
+        $this->serieNotaFiscal = $serieNotaFiscal;
+        return $this;
     }
 
     /**
      * @return float
      */
-    public function getValorNotaFiscal()
+    public function getValorNotaFiscal(): float
     {
         return $this->valorNotaFiscal;
     }
 
     /**
      * @param float $valorNotaFiscal
+     * @return DestinoNacional
      */
-    public function setValorNotaFiscal($valorNotaFiscal)
+    public function setValorNotaFiscal(float $valorNotaFiscal): DestinoNacional
     {
         $this->valorNotaFiscal = $valorNotaFiscal;
-    }
-
-    /**
-     * @param string $naturezaNotaFiscal
-     */
-    public function setNaturezaNotaFiscal($naturezaNotaFiscal)
-    {
-        $this->naturezaNotaFiscal = $naturezaNotaFiscal;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getNaturezaNotaFiscal()
+    public function getNaturezaNotaFiscal(): string
     {
         return $this->naturezaNotaFiscal;
     }
 
     /**
-     * @param float $valorACobrar
+     * @param string $naturezaNotaFiscal
+     * @return DestinoNacional
      */
-    public function setValorACobrar($valorACobrar)
+    public function setNaturezaNotaFiscal(string $naturezaNotaFiscal): DestinoNacional
     {
-        $this->valorACobrar = $valorACobrar;
-    }
-
-    /**
-     * @return float
-     */
-    public function getValorACobrar()
-    {
-        return $this->valorACobrar;
-    }
-
-    /**
-     * @param string $agencia
-     */
-    public function setAgencia($agencia)
-    {
-        $this->agencia = $agencia;
+        $this->naturezaNotaFiscal = $naturezaNotaFiscal;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getAgencia()
+    public function getDescricaoObjeto(): string
+    {
+        return $this->descricaoObjeto;
+    }
+
+    /**
+     * @param string $descricaoObjeto
+     * @return DestinoNacional
+     */
+    public function setDescricaoObjeto(string $descricaoObjeto): DestinoNacional
+    {
+        $this->descricaoObjeto = $descricaoObjeto;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getValorACobrar(): float
+    {
+        return $this->valorACobrar;
+    }
+
+    /**
+     * @param float $valorACobrar
+     * @return DestinoNacional
+     */
+    public function setValorACobrar(float $valorACobrar): DestinoNacional
+    {
+        $this->valorACobrar = $valorACobrar;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAgencia(): string
     {
         return $this->agencia;
     }
+
+    /**
+     * @param string $agencia
+     * @return DestinoNacional
+     */
+    public function setAgencia(string $agencia): DestinoNacional
+    {
+        $this->agencia = $agencia;
+        return $this;
+    }
+
 }

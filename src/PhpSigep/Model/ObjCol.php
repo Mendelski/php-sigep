@@ -6,80 +6,109 @@ namespace PhpSigep\Model;
  */
 class ObjCol extends AbstractModel
 {
-    /*
-     * Obrigatorio
-     */
-
+    /* Obrigatorio*/
     protected $item;
-    /*
-     * Nao Obrigatorio
-     */
+
+    /* Nao Obrigatorio*/
     protected $desc;
-    /*
-     * Nao Obrigatorio
-     */
+
+    /* Nao Obrigatorio */
     protected $entrega;
-    /*
-     * Nao Obrigatorio
-     */
+
+    /* Nao Obrigatorio */
     protected $num;
-    /*
-     * Nao Obrigatorio
-     */
+
+    /* Nao Obrigatorio */
     protected $id;
 
+    /**
+     * @return mixed
+     */
     public function getItem()
     {
         return $this->item;
     }
 
-    public function getDesc()
-    {
-        return $this->desc;
-    }
-
-    public function getEntrega()
-    {
-        return $this->entrega;
-    }
-
-    public function getNum()
-    {
-        return $this->num;
-    }
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
+    /**
+     * @param mixed $item
+     * @return ObjCol
+     */
     public function setItem($item)
     {
         $this->item = $item;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDesc()
+    {
+        return $this->desc;
+    }
+
+    /**
+     * @param mixed $desc
+     * @return ObjCol
+     */
     public function setDesc($desc)
     {
         $this->desc = $desc;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEntrega()
+    {
+        return $this->entrega;
+    }
+
+    /**
+     * @param mixed $entrega
+     * @return ObjCol
+     */
     public function setEntrega($entrega)
     {
         $this->entrega = $entrega;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNum()
+    {
+        return $this->num;
+    }
+
+    /**
+     * @param mixed $num
+     * @return ObjCol
+     */
     public function setNum($num)
     {
         $this->num = $num;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     * @return ObjCol
+     */
     public function setId($id)
     {
         $this->id = $id;
         return $this;
     }
+
 }

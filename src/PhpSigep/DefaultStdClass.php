@@ -9,7 +9,7 @@ abstract class DefaultStdClass
 
     protected $_failIfAtributeNotExiste = true;
 
-    public function __construct(array $initialValues = array())
+    public function __construct(array $initialValues = [])
     {
         $this->setFromArray($initialValues);
     }
@@ -19,7 +19,7 @@ abstract class DefaultStdClass
      * @param $value
      * @throws InvalidArgument
      */
-    public function set($attributeName, $value)
+    public function set(string $attributeName, $value): void
     {
         $method = 'set' . ucfirst($attributeName);
         if (is_callable(array($this, $method))) {
@@ -32,7 +32,7 @@ abstract class DefaultStdClass
             throw new InvalidArgument('Não existe um método para definir o valor do atributo "'
                 . get_class($this) . '::' . $attributeName . '"');
         }
-        
+
         $this->$attributeName = $value;
     }
 
@@ -44,26 +44,26 @@ abstract class DefaultStdClass
     public function get($attributeName)
     {
         $method = 'get' . ucfirst($attributeName);
-        if (is_callable(array($this, $method))) {
+        if (is_callable([$this, $method])) {
             return $this->$method();
         }
         $method = 'is' . ucfirst($attributeName);
-        if (is_callable(array($this, $method))) {
+        if (is_callable([$this, $method])) {
             return $this->$method();
         }
 
         if ($this->_failIfAtributeNotExiste) {
-            throw new InvalidArgument('Não existe um método para retornar o valor do atributo: "'
-                . $attributeName . '"');
+            $message = 'Não existe um método para retornar o valor do atributo: "' . $attributeName . '"';
+            throw new InvalidArgument($message);
         }
-        
+
         return null;
     }
 
     /**
      * @return array
      */
-    public function toArray()
+    public function toArray(): array
     {
         return $this->_toArray($this);
     }
@@ -72,9 +72,9 @@ abstract class DefaultStdClass
      * @param $value
      * @return array
      */
-    private function _toArray($value)
+    private function _toArray($value): array
     {
-        $result = array();
+        $result = [];
         $vars   = get_object_vars($value);
         foreach ($vars as $var => $val) {
             try {
@@ -86,17 +86,18 @@ abstract class DefaultStdClass
                 continue;
             }
 
+            if (!is_object($val) && is_array($val)) {
+                $novoVal = [];
+                foreach ($val as $k => $v) {
+                    $novoVal[$k] = $value->_toArray($v);
+                }
+                $val = $novoVal;
+            }
+
             if (is_object($val)) {
                 $val = $value->_toArray($val);
-            } else {
-                if (is_array($val)) {
-                    $novoVal = array();
-                    foreach ($val as $k => $v) {
-                        $novoVal[$k] = $value->_toArray($v);
-                    }
-                    $val = $novoVal;
-                }
             }
+
             $result[$var] = $val;
         }
 
@@ -105,8 +106,9 @@ abstract class DefaultStdClass
 
     /**
      * @param array $values
+     * @throws InvalidArgument
      */
-    public function setFromArray(array $values)
+    public function setFromArray(array $values): void
     {
         foreach ($values as $attr => $value) {
             $this->set($attr, $value);

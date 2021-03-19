@@ -13,189 +13,149 @@ class ObjetoPostal extends AbstractModel
      * @var Etiqueta
      */
     protected $etiqueta;
+
     /**
      * O serviço de postagem que será usado para enviar esta encomenda.
      * @var ServicoDePostagem
      */
     protected $servicoDePostagem;
+
     /**
      * Cubagem do Objeto. Não obrigatório.
      * @var float
      */
     protected $cubagem;
+
     /**
      * Pesto em gramas.
      * @var float
      */
     protected $peso;
+
     /**
      * Dados da pessoa que vai receber esta encomenda.
      * @var Destinatario
      */
     protected $destinatario;
+
     /**
      * Dados do endereço de destino da encomenda.
      * Pode ser nacional ou internacional.
      * @var Destino
      */
     protected $destino;
-    /**
-     * Lista de serviços adicionais usados nesta encomenda.
+
+    /** Lista de serviços adicionais usados nesta encomenda.
      * @var ServicoAdicional[]
      */
     protected $servicosAdicionais;
-    /**
-     * @var Dimensao
-     */
+
+    /** @var Dimensao */
     protected $dimensao;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $observacao;
 
-    /**
-     * @param float $cubagem
-     */
-    public function setCubagem($cubagem)
+    public function setCubagem($cubagem): self
     {
         $this->cubagem = $cubagem;
+        return $this;
     }
 
-    /**
-     * @return float
-     */
-    public function getCubagem()
+    public function getCubagem(): float
     {
         return $this->cubagem;
     }
 
-    /**
-     * @param \PhpSigep\Model\Destinatario $destinatario
-     */
-    public function setDestinatario($destinatario)
+    public function setDestinatario(Destinatario $destinatario): self
     {
         $this->destinatario = $destinatario;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\Destinatario
-     */
-    public function getDestinatario()
+    public function getDestinatario(): Destinatario
     {
         return $this->destinatario;
     }
 
-    /**
-     * @param \PhpSigep\Model\Destino $destino
-     */
-    public function setDestino($destino)
+    public function setDestino(Destino $destino): self
     {
         $this->destino = $destino;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\Destino
-     */
-    public function getDestino()
+    public function getDestino(): Destino
     {
         return $this->destino;
     }
 
-    /**
-     * @param \PhpSigep\Model\Dimensao $dimensao
-     */
-    public function setDimensao($dimensao)
+    public function setDimensao(Dimensao $dimensao): self
     {
         $this->dimensao = $dimensao;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\Dimensao
-     */
-    public function getDimensao()
+    public function getDimensao(): Dimensao
     {
         return $this->dimensao;
     }
 
-    /**
-     * @param \PhpSigep\Model\Etiqueta $etiqueta
-     */
-    public function setEtiqueta($etiqueta)
+    public function setEtiqueta(Etiqueta $etiqueta): self
     {
         $this->etiqueta = $etiqueta;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\Etiqueta
-     */
-    public function getEtiqueta()
+    public function getEtiqueta(): Etiqueta
     {
         return $this->etiqueta;
     }
 
-    /**
-     * @param float $peso
-     */
-    public function setPeso($peso)
+    public function setPeso(float $peso): self
     {
         $this->peso = $peso;
+        return $this;
     }
 
     /**
      * Peso em kilogramas.
      * Ex: use 0.3 para 300 gramas
-     * @return float
      */
-    public function getPeso()
+    public function getPeso(): float
     {
         return $this->peso;
     }
 
-    /**
-     * @param \PhpSigep\Model\ServicoDePostagem $servicoDePostagem
-     */
-    public function setServicoDePostagem($servicoDePostagem)
+    public function setServicoDePostagem(ServicoDePostagem $servicoDePostagem): self
     {
         $this->servicoDePostagem = $servicoDePostagem;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\ServicoDePostagem
-     */
-    public function getServicoDePostagem()
+    public function getServicoDePostagem(): ServicoDePostagem
     {
         return $this->servicoDePostagem;
     }
 
-    /**
-     * @param \PhpSigep\Model\ServicoAdicional[] $servicosAdicionais
-     */
-    public function setServicosAdicionais($servicosAdicionais)
+    public function setServicosAdicionais(array $servicosAdicionais): self
     {
         $this->servicosAdicionais = $servicosAdicionais;
+        return $this;
     }
 
-    /**
-     * @return \PhpSigep\Model\ServicoAdicional[]
-     */
-    public function getServicosAdicionais()
+    public function getServicosAdicionais(): array
     {
         return (array)$this->servicosAdicionais;
     }
 
-    /**
-     * @return string
-     */
-    public function getObservacao()
+    public function getObservacao(): string
     {
         return $this->observacao;
     }
 
-    /**
-     * @param string $observacao
-     */
-    public function setObservacao($observacao)
+    public function setObservacao($observacao): self
     {
         $this->observacao = $observacao;
+        return $this;
     }
 }

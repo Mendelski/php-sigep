@@ -1,10 +1,12 @@
 <?php
 namespace PhpSigep\Pdf;
+use PhpSigepFPDF;
+
 /**
  * @author: Stavarengo
  * @modify Anderson Luiz Silvério <andersonlsilverio@gmail.com>
  */
-class ImprovedFPDF extends \PhpSigepFPDF
+class ImprovedFPDF extends PhpSigepFPDF
 {
     /**
      * @var int

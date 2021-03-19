@@ -1,6 +1,10 @@
 <?php
 namespace PhpSigep\Model;
 
+use Exception;
+use PhpSigep\Bootstrap;
+use PhpSigep\Config;
+
 /**
  * @author: Stavarengo
  */
@@ -23,6 +27,8 @@ class AccessDataHomologacao extends AccessData
                 'diretoria'         => new Diretoria(Diretoria::DIRETORIA_DR_BRASILIA), // Obtido no método 'buscaCliente'.
             )
         );
-        try {\PhpSigep\Bootstrap::getConfig()->setEnv(\PhpSigep\Config::ENV_DEVELOPMENT);} catch (\Exception $e) {}
+        try {
+            Bootstrap::getConfig()->setEnv(Config::ENV_DEVELOPMENT);
+        } catch (Exception $exception) {}
     }
 }

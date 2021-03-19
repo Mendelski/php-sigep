@@ -2,115 +2,109 @@
 namespace PhpSigep\Model;
 
 /**
-
  * @author: Renan Zanelato <email:renan.zanelato96@gmail.com>
  */
 class SolicitarPostagemReversa extends AbstractModel
 {
 
-    /**
-     * @var \PhpSigep\Model\AccessData
-     */
+    /** @var AccessData */
     protected $AccessData;
 
-    /**
-     * @var \PhpSigep\Model\Destinatario
-     */
+    /** @var Destinatario */
     protected $destinatario;
 
-    /**
-     * @var \PhpSigep\Model\ColetasSolicitadas
-     */
+    /** * @var ColetasSolicitadas */
     protected $coletas_solicitadas;
+
     protected $contrato;
+
     protected $codigo_servico;
 
     /**
-     * Get AccessData.
-     *
-     * @return \PhpSigep\Model\AccessData
+     * @return AccessData
      */
-    public function getAccessData()
+    public function getAccessData(): AccessData
     {
         return $this->AccessData;
     }
 
     /**
-     * Get destinatario.
-     *
-     * @return \PhpSigep\Model\Destinatario
+     * @param AccessData $AccessData
+     * @return SolicitarPostagemReversa
      */
-    public function getDestinatario()
-    {
-        return $this->destinatario;
-    }
-
-    /**
-     * Get coletas_solicitadas.
-     *
-     * @return \PhpSigep\Model\coletas_solicitadas
-     */
-    public function getColetas_solicitadas()
-    {
-        return $this->coletas_solicitadas;
-    }
-
-    /**
-     * Set AccessData.
-     *
-     * @param \PhpSigep\Model\AccessData $AccessData
-     *
-     * @return SolicitarPostagemRervsa
-     */
-    public function setAccessData(\PhpSigep\Model\AccessData $AccessData)
+    public function setAccessData(AccessData $AccessData): SolicitarPostagemReversa
     {
         $this->AccessData = $AccessData;
         return $this;
     }
 
     /**
-     * Set destinatario.
-     *
-     * @param \PhpSigep\Model\Destinatario $destinatario
-     *
-     * @return SolicitarPostagemRervsa
+     * @return Destinatario
      */
-    public function setDestinatario(\PhpSigep\Model\Destinatario $destinatario)
+    public function getDestinatario(): Destinatario
+    {
+        return $this->destinatario;
+    }
+
+    /**
+     * @param Destinatario $destinatario
+     * @return SolicitarPostagemReversa
+     */
+    public function setDestinatario(Destinatario $destinatario): SolicitarPostagemReversa
     {
         $this->destinatario = $destinatario;
         return $this;
     }
 
     /**
-     * Set coletas_solicitadas.
-     *
-     * @param \PhpSigep\Model\ColetasSolicitadas $coletas_solicitadas
-     *
-     * @return SolicitarPostagemRervsa
+     * @return ColetasSolicitadas
      */
-    public function setColetas_solicitadas(\PhpSigep\Model\ColetasSolicitadas $coletas_solicitadas)
+    public function getColetasSolicitadas(): ColetasSolicitadas
+    {
+        return $this->coletas_solicitadas;
+    }
+
+    /**
+     * @param ColetasSolicitadas $coletas_solicitadas
+     * @return SolicitarPostagemReversa
+     */
+    public function setColetasSolicitadas(ColetasSolicitadas $coletas_solicitadas): SolicitarPostagemReversa
     {
         $this->coletas_solicitadas = $coletas_solicitadas;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function getContrato()
     {
         return $this->contrato;
     }
 
+    /**
+     * @param mixed $contrato
+     * @return SolicitarPostagemReversa
+     */
     public function setContrato($contrato)
     {
         $this->contrato = $contrato;
         return $this;
     }
 
-    public function getCodigo_servico()
+    /**
+     * @return mixed
+     */
+    public function getCodigoServico()
     {
         return $this->codigo_servico;
     }
 
-    public function setCodigo_servico($codigo_servico)
+    /**
+     * @param mixed $codigo_servico
+     * @return SolicitarPostagemReversa
+     */
+    public function setCodigoServico($codigo_servico)
     {
         $this->codigo_servico = $codigo_servico;
         return $this;

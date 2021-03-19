@@ -9,189 +9,174 @@ namespace PhpSigep\Model;
 
 class ConsultaCepResposta extends AbstractModel
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $bairro;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $cep;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $cidade;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $complemento1;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $complemento2;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $endereco;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     protected $id;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $uf;
-
-    /**
-     * @param string $bairro
-     * @return $this;
-     */
-    public function setBairro($bairro)
-    {
-        $this->bairro = $bairro;
-
-        return $this;
-    }
 
     /**
      * @return string
      */
-    public function getBairro()
+    public function getBairro(): string
     {
         return $this->bairro;
     }
 
     /**
-     * @param string $cep
-     * @return $this;
+     * @param string $bairro
+     * @return ConsultaCepResposta
      */
-    public function setCep($cep)
+    public function setBairro(string $bairro): ConsultaCepResposta
     {
-        $this->cep = $cep;
-
+        $this->bairro = $bairro;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCep()
+    public function getCep(): string
     {
         return $this->cep;
     }
 
     /**
-     * @param string $cidade
-     * @return $this;
+     * @param string $cep
+     * @return ConsultaCepResposta
      */
-    public function setCidade($cidade)
+    public function setCep(string $cep): ConsultaCepResposta
     {
-        $this->cidade = $cidade;
-
+        $this->cep = $cep;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCidade()
+    public function getCidade(): string
     {
         return $this->cidade;
     }
 
     /**
-     * @param string $complemento1
-     * @return $this;
+     * @param string $cidade
+     * @return ConsultaCepResposta
      */
-    public function setComplemento1($complemento1)
+    public function setCidade(string $cidade): ConsultaCepResposta
     {
-        $this->complemento1 = $complemento1;
-
+        $this->cidade = $cidade;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getComplemento1()
+    public function getComplemento1(): string
     {
         return $this->complemento1;
     }
 
     /**
-     * @param string $complemento2
-     * @return $this;
+     * @param string $complemento1
+     * @return ConsultaCepResposta
      */
-    public function setComplemento2($complemento2)
+    public function setComplemento1(string $complemento1): ConsultaCepResposta
     {
-        $this->complemento2 = $complemento2;
-
+        $this->complemento1 = $complemento1;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getComplemento2()
+    public function getComplemento2(): string
     {
         return $this->complemento2;
     }
 
     /**
-     * @param string $endereco
-     * @return $this;
+     * @param string $complemento2
+     * @return ConsultaCepResposta
      */
-    public function setEndereco($endereco)
+    public function setComplemento2(string $complemento2): ConsultaCepResposta
     {
-        $this->endereco = $endereco;
-
+        $this->complemento2 = $complemento2;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getEndereco()
+    public function getEndereco(): string
     {
         return $this->endereco;
     }
 
     /**
-     * @param int $id
-     * @return $this;
+     * @param string $endereco
+     * @return ConsultaCepResposta
      */
-    public function setId($id)
+    public function setEndereco(string $endereco): ConsultaCepResposta
     {
-        $this->id = $id;
-
+        $this->endereco = $endereco;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
-     * @param string $uf
-     * @return $this;
+     * @param int $id
+     * @return ConsultaCepResposta
      */
-    public function setUf($uf)
+    public function setId(int $id): ConsultaCepResposta
     {
-        $this->uf = $uf;
-
+        $this->id = $id;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getUf()
+    public function getUf(): string
     {
         return $this->uf;
     }
+
+    /**
+     * @param string $uf
+     * @return ConsultaCepResposta
+     */
+    public function setUf(string $uf): ConsultaCepResposta
+    {
+        $this->uf = $uf;
+        return $this;
+    }
+
+
    
 } 

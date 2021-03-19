@@ -7,258 +7,234 @@ namespace PhpSigep\Model;
  */
 class RastrearObjetoEvento extends AbstractModel
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $tipo;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     protected $status;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $dataHora;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $descricao;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $recebedor;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $detalhe;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $local;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $codigo;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $cidade;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $uf;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $error;
-
-    /**
-     * @param string $tipo
-     * @return $this;
-     */
-    public function setTipo($tipo)
-    {
-        $this->tipo = $tipo;
-
-        return $this;
-    }
 
     /**
      * @return string
      */
-    public function getTipo()
+    public function getTipo(): string
     {
         return $this->tipo;
     }
 
     /**
-     * @param int $status
-     * @return $this;
+     * @param string $tipo
+     * @return RastrearObjetoEvento
      */
-    public function setStatus($status)
+    public function setTipo(string $tipo): RastrearObjetoEvento
     {
-        $this->status = $status;
-
+        $this->tipo = $tipo;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getStatus()
+    public function getStatus(): int
     {
         return $this->status;
     }
 
     /**
-     * @param string $data_hora
-     * @return $this;
+     * @param int $status
+     * @return RastrearObjetoEvento
      */
-    public function setDataHora(\DateTime $data_hora)
+    public function setStatus(int $status): RastrearObjetoEvento
     {
-        $this->dataHora = $data_hora->format('Y-m-d H:i');
-
+        $this->status = $status;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getDataHora()
+    public function getDataHora(): string
     {
         return $this->dataHora;
     }
 
     /**
-     * @param string $descricao
-     * @return $this;
+     * @param string $dataHora
+     * @return RastrearObjetoEvento
      */
-    public function setDescricao($descricao)
+    public function setDataHora(string $dataHora): RastrearObjetoEvento
     {
-        $this->descricao = $descricao;
-
+        $this->dataHora = $dataHora;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getDescricao()
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
 
     /**
-     * @param string $recebedor
-     * @return $this;
+     * @param string $descricao
+     * @return RastrearObjetoEvento
      */
-    public function setRecebedor($recebedor)
+    public function setDescricao(string $descricao): RastrearObjetoEvento
     {
-        $this->recebedor = $recebedor;
-
+        $this->descricao = $descricao;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getRecebedor()
+    public function getRecebedor(): string
     {
         return $this->recebedor;
     }
 
     /**
-     * @param string $documento
-     * @return $this;
+     * @param string $recebedor
+     * @return RastrearObjetoEvento
      */
-    public function setDetalhe($detalhe)
+    public function setRecebedor(string $recebedor): RastrearObjetoEvento
     {
-        $this->detalhe = $detalhe;
-
+        $this->recebedor = $recebedor;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getDetalhe()
+    public function getDetalhe(): string
     {
         return $this->detalhe;
     }
 
     /**
-     * @param string $local
-     * @return $this;
+     * @param string $detalhe
+     * @return RastrearObjetoEvento
      */
-    public function setLocal($local)
+    public function setDetalhe(string $detalhe): RastrearObjetoEvento
     {
-        $this->local = $local;
-
+        $this->detalhe = $detalhe;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getLocal()
+    public function getLocal(): string
     {
         return $this->local;
     }
 
     /**
-     * @param string $codigo
-     * @return $this;
+     * @param string $local
+     * @return RastrearObjetoEvento
      */
-    public function setCodigo($codigo)
+    public function setLocal(string $local): RastrearObjetoEvento
     {
-        $this->codigo = $codigo;
-
+        $this->local = $local;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCodigo()
+    public function getCodigo(): string
     {
         return $this->codigo;
     }
 
     /**
-     * @param string $cidade
-     * @return $this;
+     * @param string $codigo
+     * @return RastrearObjetoEvento
      */
-    public function setCidade($cidade)
+    public function setCodigo(string $codigo): RastrearObjetoEvento
     {
-        $this->cidade = $cidade;
-
+        $this->codigo = $codigo;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCidade()
+    public function getCidade(): string
     {
         return $this->cidade;
     }
 
-
     /**
-     * @param string $uf
-     * @return $this;
+     * @param string $cidade
+     * @return RastrearObjetoEvento
      */
-    public function setUf($uf)
+    public function setCidade(string $cidade): RastrearObjetoEvento
     {
-        $this->uf = $uf;
-
+        $this->cidade = $cidade;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getUf()
+    public function getUf(): string
     {
         return $this->uf;
     }
 
     /**
-     * @param $error
-     * @return $this
+     * @param string $uf
+     * @return RastrearObjetoEvento
      */
-    public function setError($error)
+    public function setUf(string $uf): RastrearObjetoEvento
     {
-        $this->error = $error;
-
+        $this->uf = $uf;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getErrors()
+    public function getError(): string
     {
         return $this->error;
+    }
+
+    /**
+     * @param string $error
+     * @return RastrearObjetoEvento
+     */
+    public function setError(string $error): RastrearObjetoEvento
+    {
+        $this->error = $error;
+        return $this;
     }
 }

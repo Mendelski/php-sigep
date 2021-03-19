@@ -7,27 +7,26 @@ namespace PhpSigep\Model;
  */
 class BloquearObjetoResposta extends AbstractModel
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $return;
-
-    /**
-     * @param $return
-     * @return $this;
-     */
-    public function setReturn($return)
-    {
-        $this->return = $return;
-
-        return $this;
-    }
 
     /**
      * @return string
      */
-    public function getReturn()
+    public function getReturn(): string
     {
         return $this->return;
     }
+
+    /**
+     * @param string $return
+     * @return BloquearObjetoResposta
+     */
+    public function setReturn(string $return): self
+    {
+        $this->return = $return;
+        return $this;
+    }
+
+
 }

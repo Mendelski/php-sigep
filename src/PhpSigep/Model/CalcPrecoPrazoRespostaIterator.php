@@ -1,6 +1,8 @@
 <?php
 namespace PhpSigep\Model;
 
+use ArrayObject;
+
 /**
  * @author: Stavarengo
  *
@@ -9,7 +11,7 @@ namespace PhpSigep\Model;
  * method append(\PhpSigep\Model\CalcPrecoPrazoResposta $value)
  * method \PhpSigep\Model\CalcPrecoPrazoResposta[] exchangeArray(\PhpSigep\Model\CalcPrecoPrazoResposta[] $input)
  */
-class CalcPrecoPrazoRespostaIterator extends \ArrayObject
+class CalcPrecoPrazoRespostaIterator extends ArrayObject
 {
     protected $todosTemErro = null;
 
@@ -22,7 +24,7 @@ class CalcPrecoPrazoRespostaIterator extends \ArrayObject
     {
         if ($this->todosTemErro === null) {
             $this->todosTemErro = $this->count() > 0;
-            /** @var $item \PhpSigep\Model\CalcPrecoPrazoResposta */
+            /** @var $item CalcPrecoPrazoResposta */
             foreach ($this as $item) {
                 if (!$item->hasError()) {
                     $this->todosTemErro = false;

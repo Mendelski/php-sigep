@@ -37,91 +37,92 @@ class Dimensao extends AbstractModel
     protected $diametro;
 
     /**
-     * @param float $altura
-     *      Em centímetros
+     * @return int
      */
-    public function setAltura($altura)
+    public function getTipo(): int
     {
-        $this->altura = (float)$altura;
+        return $this->tipo;
+    }
+
+    /**
+     * @param int $tipo
+     * @return Dimensao
+     */
+    public function setTipo(int $tipo): self
+    {
+        $this->tipo = $tipo;
+        return $this;
     }
 
     /**
      * @return float
-     *      Em centímetros
      */
-    public function getAltura()
+    public function getAltura(): float
     {
         return $this->altura;
     }
 
     /**
-     * @param float $comprimento
-     *      Em centímetros
+     * @param float $altura
+     * @return Dimensao
      */
-    public function setComprimento($comprimento)
+    public function setAltura(float $altura): self
     {
-        $this->comprimento = (float)$comprimento;
+        $this->altura = $altura;
+        return $this;
     }
 
     /**
      * @return float
-     *      Em centímetros
      */
-    public function getComprimento()
-    {
-        return $this->comprimento;
-    }
-
-    /**
-     * @param float $diametro
-     *      Em centímetros
-     */
-    public function setDiametro($diametro)
-    {
-        $this->diametro = (float)$diametro;
-    }
-
-    /**
-     * @return float
-     *      Em centímetros
-     */
-    public function getDiametro()
-    {
-        return $this->diametro;
-    }
-
-    /**
-     * @param float $largura
-     *      Em centímetros
-     */
-    public function setLargura($largura)
-    {
-        $this->largura = (float)$largura;
-    }
-
-    /**
-     * @return float
-     *      Em centímetros
-     */
-    public function getLargura()
+    public function getLargura(): float
     {
         return $this->largura;
     }
 
     /**
-     * @param int $tipo
+     * @param float $largura
+     * @return Dimensao
      */
-    public function setTipo($tipo)
+    public function setLargura(float $largura): self
     {
-        $this->tipo = $tipo;
+        $this->largura = $largura;
+        return $this;
     }
 
     /**
-     * @return int
+     * @return float
      */
-    public function getTipo()
+    public function getComprimento(): float
     {
-        return $this->tipo;
+        return $this->comprimento;
     }
 
+    /**
+     * @param float $comprimento
+     * @return Dimensao
+     */
+    public function setComprimento(float $comprimento): self
+    {
+        $this->comprimento = $comprimento;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getDiametro(): float
+    {
+        return $this->diametro;
+    }
+
+    /**
+     * @param float $diametro
+     * @return Dimensao
+     */
+    public function setDiametro(float $diametro): self
+    {
+        $this->diametro = $diametro;
+        return $this;
+    }
 }

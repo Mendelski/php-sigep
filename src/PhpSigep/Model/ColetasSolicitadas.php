@@ -18,142 +18,189 @@ class ColetasSolicitadas extends AbstractModel
     protected $cklist;
     protected $documento;
 
-    /**
-     * @var \PhpSigep\Model\Remetente 
-     */
+    /** @var Remetente */
     protected $remetente;
+
+
     protected $produto;
 
-    /**
-     * @var \PhpSigep\Model\ObjCol 
-     */
+    /** @var ObjCol */
     protected $obj_col;
 
+    /**
+     * @return mixed
+     */
     public function getTipo()
     {
         return $this->tipo;
     }
 
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    public function getId_cliente()
-    {
-        return $this->id_cliente;
-    }
-
-    public function getAg()
-    {
-        return $this->ag;
-    }
-
-    public function getValor_declarado()
-    {
-        return $this->valor_declarado;
-    }
-
-    public function getServico_adicional()
-    {
-        return $this->servico_adicional;
-    }
-
-    public function getDescricao()
-    {
-        return $this->descricao;
-    }
-
-    public function getAr()
-    {
-        return $this->ar;
-    }
-
-    public function getCklist()
-    {
-        return $this->cklist;
-    }
-
-    public function getDocumento()
-    {
-        return $this->documento;
-    }
-
     /**
-     * @return \PhpSigep\Model\Remetente
+     * @param mixed $tipo
+     * @return ColetasSolicitadas
      */
-    public function getRemetente()
-    {
-        return $this->remetente;
-    }
-
-    public function getProduto()
-    {
-        return $this->produto;
-    }
-
-    /**
-     * @return <array>\PhpSigep\Model\ObjCol
-     */
-    public function getObj_col()
-    {
-        return $this->obj_col;
-    }
-
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param mixed $numero
+     * @return ColetasSolicitadas
+     */
     public function setNumero($numero)
     {
         $this->numero = $numero;
         return $this;
     }
 
-    public function setId_cliente($id_cliente)
+    /**
+     * @return mixed
+     */
+    public function getIdCliente()
+    {
+        return $this->id_cliente;
+    }
+
+    /**
+     * @param mixed $id_cliente
+     * @return ColetasSolicitadas
+     */
+    public function setIdCliente($id_cliente)
     {
         $this->id_cliente = $id_cliente;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAg()
+    {
+        return $this->ag;
+    }
+
+    /**
+     * @param mixed $ag
+     * @return ColetasSolicitadas
+     */
     public function setAg($ag)
     {
         $this->ag = $ag;
         return $this;
     }
 
-    public function setValor_declarado($valor_declarado)
+    /**
+     * @return mixed
+     */
+    public function getValorDeclarado()
+    {
+        return $this->valor_declarado;
+    }
+
+    /**
+     * @param mixed $valor_declarado
+     * @return ColetasSolicitadas
+     */
+    public function setValorDeclarado($valor_declarado)
     {
         $this->valor_declarado = $valor_declarado;
         return $this;
     }
 
-    public function setServico_adicional($servico_adicional)
+    /**
+     * @return mixed
+     */
+    public function getServicoAdicional()
+    {
+        return $this->servico_adicional;
+    }
+
+    /**
+     * @param mixed $servico_adicional
+     * @return ColetasSolicitadas
+     */
+    public function setServicoAdicional($servico_adicional)
     {
         $this->servico_adicional = $servico_adicional;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * @param mixed $descricao
+     * @return ColetasSolicitadas
+     */
     public function setDescricao($descricao)
     {
         $this->descricao = $descricao;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAr()
+    {
+        return $this->ar;
+    }
+
+    /**
+     * @param mixed $ar
+     * @return ColetasSolicitadas
+     */
     public function setAr($ar)
     {
         $this->ar = $ar;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCklist()
+    {
+        return $this->cklist;
+    }
+
+    /**
+     * @param mixed $cklist
+     * @return ColetasSolicitadas
+     */
     public function setCklist($cklist)
     {
         $this->cklist = $cklist;
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDocumento()
+    {
+        return $this->documento;
+    }
+
+    /**
+     * @param mixed $documento
+     * @return ColetasSolicitadas
+     */
     public function setDocumento($documento)
     {
         $this->documento = $documento;
@@ -161,46 +208,68 @@ class ColetasSolicitadas extends AbstractModel
     }
 
     /**
-     * Set remetente.
-     *
-     * @param \PhpSigep\Model\Remetente $remetente
-     *
+     * @return Remetente
+     */
+    public function getRemetente(): Remetente
+    {
+        return $this->remetente;
+    }
+
+    /**
+     * @param Remetente $remetente
      * @return ColetasSolicitadas
      */
-    public function setRemetente(\PhpSigep\Model\Remetente $remetente)
+    public function setRemetente(Remetente $remetente): self
     {
         $this->remetente = $remetente;
         return $this;
     }
 
-    public function setProduto($produto)
+    /**
+     * @return mixed
+     */
+    public function getProduto()
+    {
+        return $this->produto;
+    }
+
+    /**
+     * @param mixed $produto
+     * @return ColetasSolicitadas
+     */
+    public function setProduto($produto): self
     {
         $this->produto = $produto;
         return $this;
     }
 
     /**
-     * Set obj_col.
-     *
-     * @param \PhpSigep\Model\ObjCol $obj_col
-     *
+     * @return ObjCol
+     */
+    public function getObjCol(): ObjCol
+    {
+        return $this->obj_col;
+    }
+
+    /**
+     * @param ObjCol $obj_col
      * @return ColetasSolicitadas
      */
-    public function setObj_col(\PhpSigep\Model\ObjCol $obj_col)
+    public function setObjCol(ObjCol $obj_col): self
     {
-        return $this->AddObj_col($obj_col);
+        $this->obj_col = $obj_col;
+        return $this;
     }
 
     /**
      * Add obj_col.
      *
-     * @param \PhpSigep\Model\ObjCol $obj_col
+     * @param ObjCol $obj_col
      *
      * @return ColetasSolicitadas
      */
-    public function AddObj_col(\PhpSigep\Model\ObjCol $obj_col)
+    public function AddObj_col(ObjCol $obj_col): self
     {
-
         $this->obj_col[] = $obj_col;
         return $this;
     }

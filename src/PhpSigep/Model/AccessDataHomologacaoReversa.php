@@ -1,6 +1,10 @@
 <?php
 namespace PhpSigep\Model;
 
+use PhpSigep\Bootstrap;
+use PhpSigep\Config;
+use Exception;
+
 /**
  * @author: Renan Zanelato <email:renan.zanelato96@gmail.com>
  * @co_author: https://github.com/send4store
@@ -28,8 +32,8 @@ class AccessDataHomologacaoReversa extends AccessData
             )
         );
         try {
-            \PhpSigep\Bootstrap::getConfig()->setEnv(\PhpSigep\Config::ENV_DEVELOPMENT);
-        } catch (\Exception $e) {
+            Bootstrap::getConfig()->setEnv(Config::ENV_DEVELOPMENT);
+        } catch (Exception $exception) {
             
         }
     }

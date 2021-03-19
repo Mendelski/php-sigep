@@ -2,6 +2,16 @@
 
 // Altera as configurações do PHP para mostrar todos os erros, já que este é apenas um script de exemplo.
 // No seu ambiente de produção, você não vai precisar alterar estas configurações.
+use PhpSigep\Bootstrap;
+use PhpSigep\Config;
+use PhpSigep\Model\AccessDataHomologacaoReversa;
+use PhpSigep\Model\ColetasSolicitadas;
+use PhpSigep\Model\Destinatario;
+use PhpSigep\Model\ObjCol;
+use PhpSigep\Model\Remetente;
+use PhpSigep\Model\SolicitarPostagemReversa;
+use PhpSigep\Services\SoapClient\Real;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 ini_set('error_reporting', 'E_ALL|E_STRICT');
@@ -21,11 +31,11 @@ if (!class_exists('PhpSigepFPDF')) {
 }
 require_once __DIR__ . '/../src/PhpSigep/Bootstrap.php';
 
-$accessDataParaAmbienteDeHomologacao = new \PhpSigep\Model\AccessDataHomologacaoReversa();
+$accessDataParaAmbienteDeHomologacao = new AccessDataHomologacaoReversa();
 
-$config = new \PhpSigep\Config();
+$config = new Config();
 $config->setAccessData($accessDataParaAmbienteDeHomologacao);
-$config->setEnv(\PhpSigep\Config::ENV_DEVELOPMENT);
+$config->setEnv(Config::ENV_DEVELOPMENT);
 $config->setCacheOptions(
     array(
         'storageOptions' => array(
@@ -37,11 +47,11 @@ $config->setCacheOptions(
     
 );
 
-\PhpSigep\Bootstrap::start($config);
+Bootstrap::start($config);
 
 //EXEMPLO CAPTURADO DO send4store/php-sigep
 
-$destinatario = new \PhpSigep\Model\Destinatario();
+$destinatario = new Destinatario();
 $destinatario->setNome('Usuário Destinatário');
 $destinatario->setLogradouro('Avenida Morumbi');
 $destinatario->setNumero('2500');
@@ -54,7 +64,7 @@ $destinatario->setBairro('Morumbi');
 
 $destinatario->setEmail('teste@teste.com');
 
-$remetente = new \PhpSigep\Model\Remetente();
+$remetente = new Remetente();
 $remetente->setNome('Usuário Remetente');
 $remetente->setLogradouro('Avenida Vicente Machado');
 $remetente->setNumero('15');
@@ -72,7 +82,7 @@ $remetente->setSms('N');
 //$produto->setCodigo(116600403);
 //$produto->setTipo(0);
 //$produto->setQtd(1);
-$objCol = new \PhpSigep\Model\ObjCol;
+$objCol = new ObjCol;
 
 $objCol->setId(date('hms'));
 $objCol->setNum('');
@@ -80,7 +90,7 @@ $objCol->setEntrega('');
 $objCol->setItem(1);
 $objCol->setDesc('');
 
-$coletasSolicitadas = new \PhpSigep\Model\ColetasSolicitadas();
+$coletasSolicitadas = new ColetasSolicitadas();
 $coletasSolicitadas->setTipo('A');
 $coletasSolicitadas->setNumero('');
 $coletasSolicitadas->setValor_declarado(null);
@@ -90,14 +100,14 @@ $coletasSolicitadas->setAg(10);
 $coletasSolicitadas->setRemetente($remetente);
 $coletasSolicitadas->setObj_col($objCol);
 
-$postagem = new \PhpSigep\Model\SolicitarPostagemReversa();
+$postagem = new SolicitarPostagemReversa();
 $postagem->setAccessData($accessDataParaAmbienteDeHomologacao);
 $postagem->setDestinatario($destinatario);
 $postagem->setColetas_solicitadas($coletasSolicitadas);
 $postagem->setContrato('9992157880');
 $postagem->setCodigo_servico('04677');
 
-$phpSigep = new \PhpSigep\Services\SoapClient\Real();
+$phpSigep = new Real();
 $result = $phpSigep->solicitarPostagemReversa($postagem);
 echo "<pre>";
 print_r($result);

@@ -1,6 +1,7 @@
 <?php
 namespace PhpSigep\Pdf\Chancela;
 
+use PhpSigep\Pdf\ImprovedFPDF;
 use PhpSigep\Pdf\Script\CircularText;
 use PhpSigep\Pdf\Script\Elipse;
 
@@ -10,7 +11,7 @@ use PhpSigep\Pdf\Script\Elipse;
 class Carta extends AbstractChancela
 {
 
-    public function draw(\PhpSigep\Pdf\ImprovedFPDF $pdf)
+    public function draw(ImprovedFPDF $pdf)
     {
         $pdf->saveState();
 

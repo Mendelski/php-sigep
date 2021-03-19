@@ -137,180 +137,148 @@ class PedidoInformacao extends AbstractModel
     protected $tipoManifestacao = self::TIPO_MANIFESTACAO_RECLAMACAO;
 
     /**
-     * @param \PhpSigep\Model\AccessData $accessData
+     * @return AccessData
      */
-    public function setAccessData($accessData)
-    {
-        $this->accessData = $accessData;
-    }
-
-    /**
-     * @return \PhpSigep\Model\AccessData
-     */
-    public function getAccessData()
+    public function getAccessData(): AccessData
     {
         return $this->accessData;
     }
 
     /**
-     * Define o telefone para contato
-     *
-     * @param $telefone
-     * @return $this
+     * @param AccessData $accessData
+     * @return PedidoInformacao
      */
-    public function setTelefone($telefone)
+    public function setAccessData(AccessData $accessData): PedidoInformacao
     {
-        $this->telefone = $telefone;
-
+        $this->accessData = $accessData;
         return $this;
     }
 
     /**
-     * Obtem o telefone para contato
-     *
      * @return string
      */
-    public function getTelefone()
+    public function getTelefone(): string
     {
         return $this->telefone;
     }
 
     /**
-     * Define o Código do Objeto
-     *
-     * @param string $codigoObjeto
-     * @return $this
+     * @param string $telefone
+     * @return PedidoInformacao
      */
-    public function setCodigoObjeto($codigoObjeto)
+    public function setTelefone(string $telefone): PedidoInformacao
     {
-        $this->codigoObjeto = $codigoObjeto;
-
+        $this->telefone = $telefone;
         return $this;
     }
 
     /**
-     * Obtem o Código do Objeto
-     *
      * @return string
      */
-    public function getCodigoObjeto()
+    public function getCodigoObjeto(): string
     {
         return $this->codigoObjeto;
     }
 
     /**
-     * Define o e-mail para resposta
-     *
-     * @param string $emailResposta
-     * @return $this
+     * @param string $codigoObjeto
+     * @return PedidoInformacao
      */
-    public function setEmailResposta($emailResposta)
+    public function setCodigoObjeto(string $codigoObjeto): PedidoInformacao
     {
-        $this->emailResposta = $emailResposta;
-
+        $this->codigoObjeto = $codigoObjeto;
         return $this;
     }
 
     /**
-     * Obtem o e-mail para resposta
-     *
      * @return string
      */
-    public function getEmailResposta()
+    public function getEmailResposta(): string
     {
         return $this->emailResposta;
     }
 
     /**
-     * Define o Nome do Destinatário
-     *
-     * @param string $nomeDestinatario
-     * @return $this
+     * @param string $emailResposta
+     * @return PedidoInformacao
      */
-    public function setNomeDestinatario($nomeDestinatario)
+    public function setEmailResposta(string $emailResposta): PedidoInformacao
     {
-        $this->nomeDestinatario = $nomeDestinatario;
-
+        $this->emailResposta = $emailResposta;
         return $this;
     }
 
     /**
-     * Obtem o Nome do Destinatário
-     *
      * @return string
      */
-    public function getNomeDestinatario()
+    public function getNomeDestinatario(): string
     {
         return $this->nomeDestinatario;
     }
 
     /**
-     * Define o código da reclamação
-     *
-     * @param int $codigoMotivoReclamacao
-     * @return $this;
+     * @param string $nomeDestinatario
+     * @return PedidoInformacao
      */
-    public function setCodigoMotivoReclamacao($codigoMotivoReclamacao)
+    public function setNomeDestinatario(string $nomeDestinatario): PedidoInformacao
     {
-        $this->codigoMotivoReclamacao = $codigoMotivoReclamacao;
-
+        $this->nomeDestinatario = $nomeDestinatario;
         return $this;
     }
 
     /**
-     * Obtem o código da reclamação
-     *
      * @return int
      */
-    public function getCodigoMotivoReclamacao()
+    public function getCodigoMotivoReclamacao(): int
     {
         return $this->codigoMotivoReclamacao;
     }
 
     /**
-     * Define o tipo de embalagem
-     *
-     * @param string $tipoEmbalagem
-     * @return $this;
+     * @param int $codigoMotivoReclamacao
+     * @return PedidoInformacao
      */
-    public function setTipoEmbalagem($tipoEmbalagem)
+    public function setCodigoMotivoReclamacao(int $codigoMotivoReclamacao): PedidoInformacao
     {
-        $this->tipoEmbalagem = $tipoEmbalagem;
-
+        $this->codigoMotivoReclamacao = $codigoMotivoReclamacao;
         return $this;
     }
 
     /**
-     * Obtem o tipo de embalagem
-     *
      * @return string
      */
-    public function getTipoEmbalagem()
+    public function getTipoEmbalagem(): string
     {
         return $this->tipoEmbalagem;
     }
 
     /**
-     * Define o tipo de manifestção
-     *
-     * @param string $tipoManifestacao
-     * @return $this;
+     * @param string $tipoEmbalagem
+     * @return PedidoInformacao
      */
-    public function setTipoManifestacao($tipoManifestacao)
+    public function setTipoEmbalagem(string $tipoEmbalagem): PedidoInformacao
     {
-        $this->tipoManifestacao = $tipoManifestacao;
-
+        $this->tipoEmbalagem = $tipoEmbalagem;
         return $this;
     }
 
     /**
-     * Obtem o tipo de manifestação
-     *
      * @return string
      */
-    public function getTipoManifestacao()
+    public function getTipoManifestacao(): string
     {
         return $this->tipoManifestacao;
     }
+
+    /**
+     * @param string $tipoManifestacao
+     * @return PedidoInformacao
+     */
+    public function setTipoManifestacao(string $tipoManifestacao): PedidoInformacao
+    {
+        $this->tipoManifestacao = $tipoManifestacao;
+        return $this;
+    }
+
     
 }

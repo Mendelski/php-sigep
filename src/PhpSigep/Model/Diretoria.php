@@ -36,53 +36,51 @@ class Diretoria extends AbstractModel
     const DIRETORIA_DR_SAO_PAULO_INTERIOR    = 74;
     const DIRETORIA_DR_SAO_PAULO             = 72;
     const DIRETORIA_DR_TOCANTINS             = 75;
-    private static $diretorias = array(
-        self::DIRETORIA_AC_ADMINISTRACAO_CENTRAL => array('AC', 'AC Administraçao Central'),
-        self::DIRETORIA_DR_ACRE                  => array('ACR', 'DR - Acre'),
-        self::DIRETORIA_DR_ALAGOAS               => array('AL', 'DR - Alagoas'),
-        self::DIRETORIA_DR_AMAZONAS              => array('AM', 'DR - Amazonas'),
-        self::DIRETORIA_DR_AMAPA                 => array('AP', 'DR - Amapá'),
-        self::DIRETORIA_DR_BAHIA                 => array('BA', 'DR - Bahia'),
-        self::DIRETORIA_DR_BRASILIA              => array('BSB', 'DR - Brasília'),
-        self::DIRETORIA_DR_CEARA                 => array('CE', 'DR - Ceará'),
-        self::DIRETORIA_DR_ESPIRITO_SANTO        => array('ES', 'DR - Espirito Santo'),
-        self::DIRETORIA_DR_GOIAS                 => array('GO', 'DR - Goiás'),
-        self::DIRETORIA_DR_MARANHAO              => array('MA', 'DR - Maranhão'),
-        self::DIRETORIA_DR_MINAS_GERAIS          => array('MG', 'DR - Minas Gerais'),
-        self::DIRETORIA_DR_MATO_GROSSO_DO_SUL    => array('MS', 'DR - Mato Grosso do Sul'),
-        self::DIRETORIA_DR_MATO_GROSSO           => array('MT', 'DR - Mato Grosso'),
-        self::DIRETORIA_DR_PARA                  => array('PA', 'DR - Pará'),
-        self::DIRETORIA_DR_PARAIBA               => array('PB', 'DR - Paraíba'),
-        self::DIRETORIA_DR_PERNAMBUCO            => array('PE', 'DR - Pernambuco'),
-        self::DIRETORIA_DR_PIAUI                 => array('PI', 'DR - Piauí'),
-        self::DIRETORIA_DR_PARANA                => array('PR', 'DR - Paraná'),
-        self::DIRETORIA_DR_RIO_DE_JANEIRO        => array('RJ', 'DR - Rio de Janeiro'),
-        self::DIRETORIA_DR_RIO_GRANDE_DO_NORTE   => array('RN', 'DR - Rio Grande do Norte'),
-        self::DIRETORIA_DR_RONDONIA              => array('RO', 'DR - Rondonia'),
-        self::DIRETORIA_DR_RORAIMA               => array('RR', 'DR - Roraima'),
-        self::DIRETORIA_DR_RIO_GRANDE_DO_SUL     => array('RS', 'DR - Rio Grande do Sul'),
-        self::DIRETORIA_DR_SANTA_CATARINA        => array('SC', 'DR - Santa Catarina'),
-        self::DIRETORIA_DR_SERGIPE               => array('SE', 'DR - Sergipe'),
-        self::DIRETORIA_DR_SAO_PAULO_INTERIOR    => array('SPI', 'DR - São Paulo Interior'),
-        self::DIRETORIA_DR_SAO_PAULO             => array('SPM', 'DR - São Paulo'),
-        self::DIRETORIA_DR_TOCANTINS             => array('TO', 'DR - Tocantins'),
-    );
-    /**
-     * @var int
-     */
+    
+    private static $diretorias = [
+        self::DIRETORIA_AC_ADMINISTRACAO_CENTRAL => ['AC', 'AC Administraçao Central'],
+        self::DIRETORIA_DR_ACRE                  => ['ACR', 'DR - Acre'],
+        self::DIRETORIA_DR_ALAGOAS               => ['AL', 'DR - Alagoas'],
+        self::DIRETORIA_DR_AMAZONAS              => ['AM', 'DR - Amazonas'],
+        self::DIRETORIA_DR_AMAPA                 => ['AP', 'DR - Amapá'],
+        self::DIRETORIA_DR_BAHIA                 => ['BA', 'DR - Bahia'],
+        self::DIRETORIA_DR_BRASILIA              => ['BSB', 'DR - Brasília'],
+        self::DIRETORIA_DR_CEARA                 => ['CE', 'DR - Ceará'],
+        self::DIRETORIA_DR_ESPIRITO_SANTO        => ['ES', 'DR - Espirito Santo'],
+        self::DIRETORIA_DR_GOIAS                 => ['GO', 'DR - Goiás'],
+        self::DIRETORIA_DR_MARANHAO              => ['MA', 'DR - Maranhão'],
+        self::DIRETORIA_DR_MINAS_GERAIS          => ['MG', 'DR - Minas Gerais'],
+        self::DIRETORIA_DR_MATO_GROSSO_DO_SUL    => ['MS', 'DR - Mato Grosso do Sul'],
+        self::DIRETORIA_DR_MATO_GROSSO           => ['MT', 'DR - Mato Grosso'],
+        self::DIRETORIA_DR_PARA                  => ['PA', 'DR - Pará'],
+        self::DIRETORIA_DR_PARAIBA               => ['PB', 'DR - Paraíba'],
+        self::DIRETORIA_DR_PERNAMBUCO            => ['PE', 'DR - Pernambuco'],
+        self::DIRETORIA_DR_PIAUI                 => ['PI', 'DR - Piauí'],
+        self::DIRETORIA_DR_PARANA                => ['PR', 'DR - Paraná'],
+        self::DIRETORIA_DR_RIO_DE_JANEIRO        => ['RJ', 'DR - Rio de Janeiro'],
+        self::DIRETORIA_DR_RIO_GRANDE_DO_NORTE   => ['RN', 'DR - Rio Grande do Norte'],
+        self::DIRETORIA_DR_RONDONIA              => ['RO', 'DR - Rondonia'],
+        self::DIRETORIA_DR_RORAIMA               => ['RR', 'DR - Roraima'],
+        self::DIRETORIA_DR_RIO_GRANDE_DO_SUL     => ['RS', 'DR - Rio Grande do Sul'],
+        self::DIRETORIA_DR_SANTA_CATARINA        => ['SC', 'DR - Santa Catarina'],
+        self::DIRETORIA_DR_SERGIPE               => ['SE', 'DR - Sergipe'],
+        self::DIRETORIA_DR_SAO_PAULO_INTERIOR    => ['SPI', 'DR - São Paulo Interior'],
+        self::DIRETORIA_DR_SAO_PAULO             => ['SPM', 'DR - São Paulo'],
+        self::DIRETORIA_DR_TOCANTINS             => ['TO', 'DR - Tocantins'],
+    ];
+
+    /** @var int */
     protected $numero;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $nome;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $sigla;
 
     /**
      * @param int $numeroDiretoria
-     *        Uma das constantes {@link Diretoria}::DIRETORIA_*
+     * Uma das constantes {@link Diretoria}::DIRETORIA_*
      *
      * @throws Exception
      */
@@ -94,60 +92,81 @@ class Diretoria extends AbstractModel
         }
 
         parent::__construct(
-            array(
+            [
                 'numero' => $numeroDiretoria,
                 'sigla'  => self::$diretorias[$numeroDiretoria][0],
                 'nome'   => self::$diretorias[$numeroDiretoria][1],
-            )
+            ]
         );
     }
 
     /**
-     * @return string
+     * @return string[][]
      */
-    public function getNome()
+    public static function getDiretorias(): array
     {
-        return $this->nome;
+        return self::$diretorias;
     }
 
     /**
-     * @param string $nome
+     * @param string[][] $diretorias
      */
-    public function setNome($nome)
+    public static function setDiretorias(array $diretorias): void
     {
-        $this->nome = $nome;
+        self::$diretorias = $diretorias;
     }
 
     /**
      * @return int
      */
-    public function getNumero()
+    public function getNumero(): int
     {
         return $this->numero;
     }
 
     /**
      * @param int $numero
+     * @return Diretoria
      */
-    public function setNumero($numero)
+    public function setNumero(int $numero): Diretoria
     {
         $this->numero = $numero;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getSigla()
+    public function getNome(): string
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @param string $nome
+     * @return Diretoria
+     */
+    public function setNome(string $nome): Diretoria
+    {
+        $this->nome = $nome;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSigla(): string
     {
         return $this->sigla;
     }
 
     /**
      * @param string $sigla
+     * @return Diretoria
      */
-    public function setSigla($sigla)
+    public function setSigla(string $sigla): Diretoria
     {
         $this->sigla = $sigla;
+        return $this;
     }
-
 }

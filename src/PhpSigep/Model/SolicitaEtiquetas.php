@@ -1,5 +1,6 @@
 <?php
 namespace PhpSigep\Model;
+use Exception;
 use PhpSigep\Bootstrap;
 use PhpSigep\InvalidArgument;
 
@@ -32,11 +33,11 @@ class SolicitaEtiquetas extends AbstractModel
     protected $accessData;
 
     /**
-     * @return \PhpSigep\Model\AccessData
+     * @return AccessData
      */
     public function getAccessData()
     {
-        return ($this->accessData ? $this->accessData : Bootstrap::getConfig()->getAccessData());
+        return ($this->accessData ?: Bootstrap::getConfig()->getAccessData());
     }
 
     /**
@@ -44,15 +45,16 @@ class SolicitaEtiquetas extends AbstractModel
      *      Opcional.
      *      Quando null será usado o valor retornado pelo método {@link \PhpSigep\Bootstrap::getConfig() }
      */
-    public function setAccessData(AccessData $accessData)
+    public function setAccessData(AccessData $accessData): self
     {
         $this->accessData = $accessData;
+        return $this;
     }
 
     /**
      * @return int
      */
-    public function getQtdEtiquetas()
+    public function getQtdEtiquetas(): int
     {
         return $this->qtdEtiquetas;
     }
@@ -60,13 +62,14 @@ class SolicitaEtiquetas extends AbstractModel
     /**
      * @param int $qtdEtiquetas
      */
-    public function setQtdEtiquetas($qtdEtiquetas)
+    public function setQtdEtiquetas($qtdEtiquetas): self
     {
         $this->qtdEtiquetas = $qtdEtiquetas;
+        return $this;
     }
 
     /**
-     * @return ServicoDePostagem
+     * @return int|ServicoDePostagem
      */
     public function getServicoDePostagem()
     {
@@ -76,8 +79,10 @@ class SolicitaEtiquetas extends AbstractModel
     /**
      * Atribui para modoMultiplasRequisicoes true
      */
-    public function setModoMultiplasRequisicoes(){
+    public function setModoMultiplasRequisicoes(): self
+    {
         $this->modoMultiplasRequisicoes = true;
+        return $this;
     }
     
     /**
@@ -97,20 +102,24 @@ class SolicitaEtiquetas extends AbstractModel
 
     /**
      * @param int|ServicoDePostagem $servicoDePostagem
-     * @throws \PhpSigep\InvalidArgument
+     * @throws InvalidArgument
+     * @throws Exception
      */
     public function setServicoDePostagem($servicoDePostagem)
     {
         if (is_string($servicoDePostagem)) {
-            $servicoDePostagem = new \PhpSigep\Model\ServicoDePostagem($servicoDePostagem);
+            $servicoDePostagem = new ServicoDePostagem($servicoDePostagem);
         }
         
         if (!($servicoDePostagem instanceof ServicoDePostagem)) {
-            throw new InvalidArgument('Serviço de postagem deve ser uma string ou uma instância de ' .
-                '\PhpSigep\Model\ServicoDePostagem.');
+            $message = 'Serviço de postagem deve ser uma string ou uma instância de '
+                . '\PhpSigep\Model\ServicoDePostagem.';
+
+            throw new InvalidArgument($message);
         }
         
         $this->servicoDePostagem = $servicoDePostagem;
+        return $this;
     }
 
 }

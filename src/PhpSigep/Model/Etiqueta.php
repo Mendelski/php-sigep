@@ -7,41 +7,42 @@ namespace PhpSigep\Model;
 class Etiqueta extends AbstractModel
 {
 
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $etiquetaComDv;
-    /**
-     * @var string
-     */
+
+    /** @var string */
     protected $etiquetaSemDv;
-    /**
-     * @var int
-     */
+
+    /** @var int */
     protected $dv;
 
     /**
      * @return int
      */
-    public function getDv()
+    public function getDv(): int
     {
-        if ($this->dv === null) {
+
+        if (!$this->dv) {
+
             $numero              = substr($this->getEtiquetaSemDv(), 2, 8);
-            $fatoresDePonderacao = array(8, 6, 4, 2, 3, 5, 9, 7);
+            $fatoresDePonderacao =[8, 6, 4, 2, 3, 5, 9, 7];
             $soma                = 0;
+
             for ($i = 0; $i < 8; $i++) {
                 $soma += ($numero[$i] * $fatoresDePonderacao[$i]);
             }
 
             $modulo = $soma % 11;
-            if ($modulo == 0) {
-                $this->dv = 5;
-            } else {
-                if ($modulo == 1) {
+
+            switch ($modulo) {
+                case 0:
+                    $this->dv = 5;
+                    break;
+                case 1:
                     $this->dv = 0;
-                } else {
+                    break;
+                default:
                     $this->dv = 11 - $modulo;
-                }
             }
         }
 
@@ -51,7 +52,7 @@ class Etiqueta extends AbstractModel
     /**
      * @param int $dv
      */
-    public function setDv($dv)
+    public function setDv(int $dv): void
     {
         $this->dv = $dv;
     }
@@ -59,10 +60,10 @@ class Etiqueta extends AbstractModel
     /**
      * @return string
      */
-    public function getEtiquetaSemDv()
+    public function getEtiquetaSemDv(): string
     {
         if (!$this->etiquetaSemDv) {
-            $comDv               = $this->getEtiquetaComDv();
+            $comDv = $this->getEtiquetaComDv();
             $this->etiquetaSemDv = substr($comDv, 0, 10) . substr($comDv, 11);
         }
 
@@ -72,19 +73,19 @@ class Etiqueta extends AbstractModel
     /**
      * @param string $etiquetaSemDv
      */
-    public function setEtiquetaSemDv($etiquetaSemDv)
+    public function setEtiquetaSemDv(string $etiquetaSemDv): void
     {
-        $etiquetaSemDv       = str_replace(' ', '', $etiquetaSemDv);
+        $etiquetaSemDv = str_replace(' ', '', $etiquetaSemDv);
         $this->etiquetaSemDv = $etiquetaSemDv;
     }
 
     /**
      * @return string
      */
-    public function getEtiquetaComDv()
+    public function getEtiquetaComDv(): string
     {
         if (!$this->etiquetaComDv) {
-            $semDv               = $this->getEtiquetaSemDv();
+            $semDv = $this->getEtiquetaSemDv();
             $this->etiquetaComDv = substr($semDv, 0, 10) . $this->getDv() . substr($semDv, 10);
         }
 
@@ -94,7 +95,7 @@ class Etiqueta extends AbstractModel
     /**
      * @param string $etiquetaComDv
      */
-    public function setEtiquetaComDv($etiquetaComDv)
+    public function setEtiquetaComDv(string $etiquetaComDv): void
     {
         $this->etiquetaComDv = $etiquetaComDv;
     }
@@ -102,7 +103,7 @@ class Etiqueta extends AbstractModel
     /**
      * @return string
      */
-    public function getNumeroSemDv()
+    public function getNumeroSemDv(): string
     {
         return substr($this->getEtiquetaSemDv(), 2, 8);
     }

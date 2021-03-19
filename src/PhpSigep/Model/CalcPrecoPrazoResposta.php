@@ -71,169 +71,171 @@ class CalcPrecoPrazoResposta extends AbstractModel
     protected $erroMsg;
 
     /**
-     * @param boolean $entregaDomiciliar
+     * @return ServicoDePostagem
      */
-    public function setEntregaDomiciliar($entregaDomiciliar)
-    {
-        $this->entregaDomiciliar = (bool)$entregaDomiciliar;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isEntregaDomiciliar()
-    {
-        return $this->entregaDomiciliar;
-    }
-
-    /**
-     * @param boolean $entregaSabado
-     */
-    public function setEntregaSabado($entregaSabado)
-    {
-        $this->entregaSabado = (bool)$entregaSabado;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isEntregaSabado()
-    {
-        return $this->entregaSabado;
-    }
-
-    /**
-     * @param int $erroCodigo
-     */
-    public function setErroCodigo($erroCodigo)
-    {
-        $this->erroCodigo = (int)$erroCodigo;
-    }
-
-    /**
-     * @return int
-     */
-    public function getErroCodigo()
-    {
-        return $this->erroCodigo;
-    }
-
-    /**
-     * @param string $erroMsg
-     */
-    public function setErroMsg($erroMsg)
-    {
-        $this->erroMsg = $erroMsg;
-    }
-
-    /**
-     * @return string
-     */
-    public function getErroMsg()
-    {
-        return $this->erroMsg;
-    }
-
-    /**
-     * @param int $prazoEntrega
-     */
-    public function setPrazoEntrega($prazoEntrega)
-    {
-        $this->prazoEntrega = (int)$prazoEntrega;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPrazoEntrega()
-    {
-        return $this->prazoEntrega;
-    }
-
-    /**
-     * @param \PhpSigep\Model\ServicoDePostagem $servico
-     */
-    public function setServico(\PhpSigep\Model\ServicoDePostagem $servico)
-    {
-        $this->servico = $servico;
-    }
-
-    /**
-     * @return \PhpSigep\Model\ServicoDePostagem
-     */
-    public function getServico()
+    public function getServico(): ServicoDePostagem
     {
         return $this->servico;
     }
 
     /**
-     * @param float $valor
+     * @param ServicoDePostagem $servico
+     * @return CalcPrecoPrazoResposta
      */
-    public function setValor($valor)
+    public function setServico(ServicoDePostagem $servico): CalcPrecoPrazoResposta
     {
-        $this->valor = (float)$valor;
+        $this->servico = $servico;
+        return $this;
     }
 
     /**
      * @return float
      */
-    public function getValor()
+    public function getValor(): float
     {
         return $this->valor;
     }
 
     /**
-     * @param float $valorAvisoRecebimento
+     * @param float $valor
+     * @return CalcPrecoPrazoResposta
      */
-    public function setValorAvisoRecebimento($valorAvisoRecebimento)
+    public function setValor(float $valor): CalcPrecoPrazoResposta
     {
-        $this->valorAvisoRecebimento = (float)$valorAvisoRecebimento;
+        $this->valor = $valor;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrazoEntrega(): int
+    {
+        return $this->prazoEntrega;
+    }
+
+    /**
+     * @param int $prazoEntrega
+     * @return CalcPrecoPrazoResposta
+     */
+    public function setPrazoEntrega(int $prazoEntrega): CalcPrecoPrazoResposta
+    {
+        $this->prazoEntrega = $prazoEntrega;
+        return $this;
     }
 
     /**
      * @return float
      */
-    public function getValorAvisoRecebimento()
-    {
-        return $this->valorAvisoRecebimento;
-    }
-
-    /**
-     * @param float $valorMaoPropria
-     */
-    public function setValorMaoPropria($valorMaoPropria)
-    {
-        $this->valorMaoPropria = (float)$valorMaoPropria;
-    }
-
-    /**
-     * @return float
-     */
-    public function getValorMaoPropria()
+    public function getValorMaoPropria(): float
     {
         return $this->valorMaoPropria;
     }
 
     /**
-     * @param float $valorValorDeclarado
+     * @param float $valorMaoPropria
+     * @return CalcPrecoPrazoResposta
      */
-    public function setValorValorDeclarado($valorValorDeclarado)
+    public function setValorMaoPropria(float $valorMaoPropria): CalcPrecoPrazoResposta
     {
-        $this->valorValorDeclarado = (float)$valorValorDeclarado;
+        $this->valorMaoPropria = $valorMaoPropria;
+        return $this;
     }
 
     /**
      * @return float
      */
-    public function getValorValorDeclarado()
+    public function getValorAvisoRecebimento(): float
+    {
+        return $this->valorAvisoRecebimento;
+    }
+
+    /**
+     * @param float $valorAvisoRecebimento
+     * @return CalcPrecoPrazoResposta
+     */
+    public function setValorAvisoRecebimento(float $valorAvisoRecebimento): CalcPrecoPrazoResposta
+    {
+        $this->valorAvisoRecebimento = $valorAvisoRecebimento;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getValorValorDeclarado(): float
     {
         return $this->valorValorDeclarado;
     }
 
     /**
+     * @param float $valorValorDeclarado
+     * @return CalcPrecoPrazoResposta
+     */
+    public function setValorValorDeclarado(float $valorValorDeclarado): CalcPrecoPrazoResposta
+    {
+        $this->valorValorDeclarado = $valorValorDeclarado;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getErroCodigo(): int
+    {
+        return $this->erroCodigo;
+    }
+
+    /**
+     * @param int $erroCodigo
+     * @return CalcPrecoPrazoResposta
+     */
+    public function setErroCodigo(int $erroCodigo): CalcPrecoPrazoResposta
+    {
+        $this->erroCodigo = $erroCodigo;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getErroMsg(): string
+    {
+        return $this->erroMsg;
+    }
+
+    /**
+     * @param string $erroMsg
+     * @return CalcPrecoPrazoResposta
+     */
+    public function setErroMsg(string $erroMsg): CalcPrecoPrazoResposta
+    {
+        $this->erroMsg = $erroMsg;
+        return $this;
+    }
+
+
+    /**
+     * @return boolean
+     */
+    public function isEntregaDomiciliar(): bool
+    {
+        return $this->entregaDomiciliar;
+    }
+
+
+    /**
+     * @return boolean
+     */
+    public function isEntregaSabado(): bool
+    {
+        return $this->entregaSabado;
+    }
+
+    /**
      * @return bool
      */
-    public function hasError()
+    public function hasError(): bool
     {
         return ($this->getErroCodigo() || $this->getErroMsg());
     }

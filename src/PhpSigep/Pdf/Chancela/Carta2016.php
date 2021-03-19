@@ -1,6 +1,7 @@
 <?php
 namespace PhpSigep\Pdf\Chancela;
 
+use PhpSigep\Pdf\ImprovedFPDF;
 use PhpSigep\Pdf\Script\Elipse;
 
 /**
@@ -9,7 +10,7 @@ use PhpSigep\Pdf\Script\Elipse;
 class Carta2016 extends AbstractChancela
 {
 
-    public function draw(\PhpSigep\Pdf\ImprovedFPDF $pdf)
+    public function draw(ImprovedFPDF $pdf)
     {
         $pdf->saveState();
 
@@ -54,7 +55,7 @@ class Carta2016 extends AbstractChancela
         $x1 = $x + 24.5 / $k;
         $x2 = $x1 + $pdf->GetStringWidth('CORREIOS') - 9.5 / $k;
         $y1 = $y + $h - 6 / $k;
-        $pdf->Image(realpath(dirname(__FILE__)) . '/../correios-logo.png', $x1 - 2 , $y1 - 5);
+        $pdf->Image(realpath(__DIR__) . '/../correios-logo.png', $x1 - 2 , $y1 - 5);
 
         $pdf->restoreLastState();
     }
